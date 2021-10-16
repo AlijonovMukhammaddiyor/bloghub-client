@@ -16,7 +16,7 @@ export default function Post(props) {
 	const [success, setSuccess] = useState(false);
 	const [again, setAgain] = useState(false);
 
-	const PF = "http://localhost:4000/images/";
+	const PF = "https://bloghub-1.herokuapp.com/images/";
 
 	const { user, dispatch } = useContext(Context);
 
@@ -31,7 +31,9 @@ export default function Post(props) {
 		}
 		if (!author.username) {
 			async function getUser() {
-				const user = await axios.get(`http://localhost:4000/api/user/` + props.post.author.id);
+				const user = await axios.get(
+					`https://bloghub-1.herokuapp.com/api/user/` + props.post.author.id
+				);
 				setAuthor(user.data);
 			}
 			getUser();
@@ -48,7 +50,10 @@ export default function Post(props) {
 			liked: newLiked,
 		};
 		try {
-			const res = await axios.put(`http://localhost:4000/api/user/${user._id}`, updatedUser);
+			const res = await axios.put(
+				`https://bloghub-1.herokuapp.com/api/user/${user._id}`,
+				updatedUser
+			);
 			setSuccess(true);
 			dispatch({ type: "UPDATE_SUCCESS", payload: res.data });
 		} catch (err) {
@@ -69,7 +74,10 @@ export default function Post(props) {
 		};
 
 		try {
-			const res = await axios.put(`http://localhost:4000/api/user/${user._id}`, updatedUser);
+			const res = await axios.put(
+				`https://bloghub-1.herokuapp.com/api/user/${user._id}`,
+				updatedUser
+			);
 			setSuccess(true);
 			dispatch({ type: "UPDATE_SUCCESS", payload: res.data });
 		} catch (err) {
@@ -95,7 +103,10 @@ export default function Post(props) {
 			};
 		}
 		try {
-			const res = await axios.put(`http://localhost:4000/api/user/${user._id}`, updatedUser);
+			const res = await axios.put(
+				`https://bloghub-1.herokuapp.com/api/user/${user._id}`,
+				updatedUser
+			);
 			setSuccess(true);
 			dispatch({ type: "UPDATE_SUCCESS", payload: res.data });
 		} catch (err) {
@@ -121,7 +132,10 @@ export default function Post(props) {
 			};
 		}
 		try {
-			const res = await axios.put(`http://localhost:4000/api/user/${user._id}`, updatedUser);
+			const res = await axios.put(
+				`https://bloghub-1.herokuapp.com/api/user/${user._id}`,
+				updatedUser
+			);
 			setSuccess(true);
 			dispatch({ type: "UPDATE_SUCCESS", payload: res.data });
 		} catch (err) {

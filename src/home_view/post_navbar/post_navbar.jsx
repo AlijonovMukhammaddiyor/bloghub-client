@@ -12,7 +12,7 @@ export default function PostNavbar() {
 	useEffect(() => {
 		if (cats.length === 0) {
 			const getCats = async () => {
-				let catss = await axios.get("http://localhost:4000/api/categories");
+				let catss = await axios.get("https://bloghub-1.herokuapp.com/api/categories");
 				let arr = Array.from(catss.data).slice(0);
 				if (arr.length > 10) {
 					arr = arr.slice(0, 10);

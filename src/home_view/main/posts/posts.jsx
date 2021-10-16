@@ -6,7 +6,7 @@ import { faClock } from "@fortawesome/free-regular-svg-icons";
 import { faTags } from "@fortawesome/free-solid-svg-icons";
 
 export default function Posts(props) {
-	const PF = "http://localhost:4000/images/";
+	const PF = "https://bloghub-1.herokuapp.com/images/";
 	return (
 		<div className="recent__posts__container">
 			<div className="recent__posts__header">

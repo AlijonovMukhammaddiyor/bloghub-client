@@ -16,7 +16,7 @@ export default function Input() {
 		dispatch({ type: "LOGIN_START" });
 		try {
 			setError(false);
-			const res = await axios.post("http://localhost:4000/api/auth/user/login", {
+			const res = await axios.post("https://bloghub-1.herokuapp.com/api/auth/user/login", {
 				username: userRef.current.value,
 				password: passwordRef.current.value,
 			});

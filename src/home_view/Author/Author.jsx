@@ -9,7 +9,7 @@ function follower_int_to_k(number) {
 }
 
 export default function Author(props) {
-	const PF = "http://localhost:4000/images/";
+	const PF = "https://bloghub-1.herokuapp.com/images/";
 	return (
 		<div className="author-hoverbox">
 			<div className="author-hoverbox-header">

@@ -19,11 +19,11 @@ export default function PostBody() {
 	const location = useLocation();
 	const id = location.pathname.split("/")[2];
 
-	const PF = "http://localhost:4000/images/";
+	const PF = "https://bloghub-1.herokuapp.com/images/";
 
 	useEffect(() => {
 		const getPost = async () => {
-			const res = await axios.get("http://localhost:4000/api/posts/" + id);
+			const res = await axios.get("https://bloghub-1.herokuapp.com/api/posts/" + id);
 			if (res.data) {
 				setPost(res.data);
 			}
@@ -35,7 +35,9 @@ export default function PostBody() {
 		async function getUser() {
 			if (post.title) {
 				try {
-					const user = await axios.get(`http://localhost:4000/api/user/` + post.author.id);
+					const user = await axios.get(
+						`https://bloghub-1.herokuapp.com/api/user/` + post.author.id
+					);
 					if (user.data) setAuthor(user.data);
 				} catch (err) {
 					console.log(err.response.data);

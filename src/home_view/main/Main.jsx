@@ -27,7 +27,9 @@ export default function Main(props) {
 				const savedPosts = props.user.saved;
 				let res = [];
 				for (let i = 0; i < savedPosts.length; ++i) {
-					const post = await axios.get(`http://localhost:4000/api/posts/${savedPosts[i]}`);
+					const post = await axios.get(
+						`https://bloghub-1.herokuapp.com/api/posts/${savedPosts[i]}`
+					);
 					res.push(post.data);
 				}
 				setPosts(res);
@@ -35,7 +37,9 @@ export default function Main(props) {
 				const LikedPosts = props.user.liked;
 				let res = [];
 				for (let i = 0; i < LikedPosts.length; ++i) {
-					const post = await axios.get(`http://localhost:4000/api/posts/${LikedPosts[i]}`);
+					const post = await axios.get(
+						`https://bloghub-1.herokuapp.com/api/posts/${LikedPosts[i]}`
+					);
 					res.push(post.data);
 				}
 				console.log(res);
@@ -43,26 +47,30 @@ export default function Main(props) {
 			} else {
 				if (isTag) {
 					if (isUser) {
-						const user = await axios.get(`http://localhost:4000/api/user/` + targetSearch);
+						const user = await axios.get(
+							`https://bloghub-1.herokuapp.com/api/user/` + targetSearch
+						);
 						setUser(user.data);
-						const res = await axios.get(`http://localhost:4000/api/posts?user=${user.username}`);
+						const res = await axios.get(
+							`https://bloghub-1.herokuapp.com/api/posts?user=${user.username}`
+						);
 						setPosts(res.data);
 					} else {
 						const res = await axios.get(
-							`http://localhost:4000/api/posts?cat=${
+							`https://bloghub-1.herokuapp.com/api/posts?cat=${
 								search.split("=")[1].charAt(0).toLocaleLowerCase() + search.split("=")[1].slice(1)
 							}`
 						);
 						setPosts(res.data);
 					}
 				} else {
-					const res = await axios.get("http://localhost:4000/api/posts");
+					const res = await axios.get("https://bloghub-1.herokuapp.com/api/posts");
 					setPosts(res.data);
 				}
 			}
 		};
 		fetchPosts();
-	}, [isTag, isUser, props, search, targetSearch]);
+	}, [isTag, isUser, location, props, search, targetSearch]);
 	return (
 		<>
 			<div className="main__container" id="recents">

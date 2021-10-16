@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import "../../../styles/trending/post/featured/featured.css";
 
 export default function featured(props) {
-	const PF = "http://localhost:4000/images/";
+	const PF = "https://bloghub-1.herokuapp.com/images/";
 	return (
 		<div className="featured__post">
 			<Link to={`post/${props.post._id}`}>

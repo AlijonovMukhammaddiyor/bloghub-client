@@ -11,7 +11,7 @@ const Navbar = (props) => {
 	const [burger, setBurger] = useState(true);
 	const [profileHoverbox, setHoverbox] = useState(false);
 
-	const PF = "http://localhost:4000/images/";
+	const PF = "https://bloghub-1.herokuapp.com/images/";
 
 	const { user } = useContext(Context);
 

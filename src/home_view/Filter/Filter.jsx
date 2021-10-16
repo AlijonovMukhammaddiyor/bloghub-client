@@ -13,12 +13,12 @@ export default function Filter(props) {
 	const [search_term, setSearchTerm] = useState("");
 	const [posts, setPosts] = useState([]);
 
-	// const PF = "http://localhost:4000/images/";
+	// const PF = "https://bloghub-1.herokuapp.com/images/";
 
 	useEffect(() => {
 		const getPost = async () => {
 			if (search_term !== "") {
-				const res = await axios.get(`http://localhost:4000/api/posts?cat=${search_term}`);
+				const res = await axios.get(`https://bloghub-1.herokuapp.com/api/posts?cat=${search_term}`);
 				if (res.data) {
 					setPosts(res.data);
 				}

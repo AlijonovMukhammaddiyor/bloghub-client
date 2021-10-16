@@ -13,7 +13,9 @@ export default function Profile(props) {
 
 	useEffect(() => {
 		const getPosts = async () => {
-			const res = await axios.get(`http://localhost:4000/api/posts?user=${props.user.username}`);
+			const res = await axios.get(
+				`https://bloghub-1.herokuapp.com/api/posts?user=${props.user.username}`
+			);
 			if (res.data.length > 0) setPosts(res.data);
 		};
 		if (true) {
@@ -21,7 +23,7 @@ export default function Profile(props) {
 		}
 	}, [posts, props.user]);
 
-	const PF = "http://localhost:4000/images/";
+	const PF = "https://bloghub-1.herokuapp.com/images/";
 
 	return (
 		<div className="profile__container">

@@ -14,7 +14,7 @@ export default function Input() {
 		setError(false);
 		try {
 			console.log("hi 1");
-			const res = await axios.post("http://localhost:4000/api/auth/user/register", {
+			const res = await axios.post("https://bloghub-1.herokuapp.com/api/auth/user/register", {
 				username,
 				email,
 				bio,

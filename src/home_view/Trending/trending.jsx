@@ -9,7 +9,7 @@ export default function Trending() {
 
 	useEffect(() => {
 		const fetchPosts = async () => {
-			const res = await axios.get("http://localhost:4000/api/posts");
+			const res = await axios.get("https://bloghub-1.herokuapp.com/api/posts");
 			setPosts(res.data);
 			if (res.data.length > 5) {
 				setPosts(Array.from(res.data).slice(0, 5));

@@ -10,11 +10,11 @@ import Profilehoverbox from "../../home_view/profile_hoverbox/ProfileHoverbox";
 export default function Navbar(props) {
 	const [cats, setCats] = useState([]);
 	const [profileHoverbox, setHoverbox] = useState(false);
-	const PF = "http://localhost:4000/images/";
+	const PF = "https://bloghub-1.herokuapp.com/images/";
 
 	useEffect(() => {
 		const getCats = async () => {
-			let catss = await axios.get("http://localhost:4000/api/categories");
+			let catss = await axios.get("https://bloghub-1.herokuapp.com/api/categories");
 			if (catss.data.length > 0) setCats(Array.from(catss.data).slice(0, 4));
 		};
 		if (true) {

@@ -13,7 +13,7 @@ const ProfileEdit = (props) => {
 	const [success, setSuccess] = useState(false);
 
 	const { dispatch } = useContext(Context);
-	const PF = "http://localhost:4000/images/";
+	const PF = "https://bloghub-1.herokuapp.com/images/";
 
 	const handleSubmit = async (e) => {
 		e.preventDefault();
@@ -33,14 +33,17 @@ const ProfileEdit = (props) => {
 			data.append("file", file);
 			updatedUser.profilePic = filename;
 			try {
-				await axios.post("http://localhost:4000/api/upload", data);
+				await axios.post("https://bloghub-1.herokuapp.com/api/upload", data);
 				console.log("success");
 			} catch (err) {
 				console.log(err.response.data);
 			}
 		}
 		try {
-			const res = await axios.put(`http://localhost:4000/api/user/${props.user._id}`, updatedUser);
+			const res = await axios.put(
+				`https://bloghub-1.herokuapp.com/api/user/${props.user._id}`,
+				updatedUser
+			);
 			setSuccess(true);
 			dispatch({ type: "UPDATE_SUCCESS", payload: res.data });
 		} catch (err) {
