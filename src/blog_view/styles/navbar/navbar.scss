@@ -1,0 +1,109 @@
+@import "../../../home_view/styles/components/variables";
+
+@mixin breakpoint_md {
+	@media (max-width: 800px) {
+		@content;
+	}
+}
+
+.blog__navbar__container {
+	max-width: 100%;
+	margin-bottom: 2rem;
+	box-shadow: 0 0 15px hsl(0, 0%, 89%);
+
+	.blog__navbar {
+		@include flex__container;
+		padding: 0.5rem 7rem;
+		@include breakpoint_md {
+			padding: 0.5rem 2rem;
+		}
+
+		.brand__container {
+			img {
+				width: 40px;
+				height: 40px;
+			}
+		}
+
+		.nav__items {
+			@include flex__container;
+			gap: 2rem;
+
+			.cats {
+				position: absolute;
+				@include flex__container;
+				top: 1.3rem;
+				gap: 1rem;
+				left: 32%;
+				right: 32%;
+				margin: auto;
+				text-align: center;
+				@media (max-width: 1100px) {
+					left: 25%;
+					right: 25%;
+					margin-right: 5rem;
+				}
+
+				@media (max-width: 950px) {
+					display: none;
+				}
+				.cat {
+					color: $text_color_dark;
+
+					&:hover {
+						text-decoration: underline;
+					}
+				}
+			}
+
+			.search__icon {
+				width: 16px;
+				height: 18px;
+				color: black;
+				cursor: pointer;
+			}
+
+			.bookmark {
+				height: 18px;
+				width: 16px;
+			}
+
+			.logged__user {
+				object-fit: cover;
+				width: 40px;
+				height: 40px;
+				border-radius: 50%;
+			}
+
+			.close {
+				position: absolute;
+				visibility: hidden;
+				top: 10rem;
+				display: none;
+			}
+
+			.hoverbox {
+				position: absolute;
+				top: 3.5rem;
+				right: -4rem;
+				visibility: visible;
+
+				@include breakpoint_md {
+					right: 0;
+				}
+			}
+
+			.nav__sign__item {
+				padding: 10px 15px;
+				border: 1px solid $text_color_nav;
+				color: $text_color_dark;
+				border-radius: 2rem;
+				@include transition_ease;
+
+				&:hover {
+					background-color: hsl(267, 53%, 98%);
+				}
+			}
+		}
+	}
+}

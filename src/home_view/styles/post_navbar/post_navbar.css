@@ -1,0 +1,145 @@
+.post__nav {
+  position: relative;
+}
+
+.post__nav .post__navbar__container {
+  border-bottom: 1px solid lightgray;
+  overflow: hidden;
+  height: 4rem;
+  background-color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  gap: 3rem;
+  z-index: 1;
+  color: #303030;
+  font-family: "Ubuntu";
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+@media screen and (max-width: 555px) {
+  .post__nav .post__navbar__container {
+    font-size: 1rem;
+    gap: 2%;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .post__nav .post__navbar__container {
+    font-size: 0.9rem;
+    height: 3rem;
+    gap: 1%;
+  }
+}
+
+.post__nav .post__navbar__container a {
+  color: #303030;
+  padding: 20px 18px;
+}
+
+.post__nav .post__navbar__container a:hover {
+  background-color: #ddd;
+}
+
+.post__nav .post__navbar__container .dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+.post__nav .post__navbar__container .dropdown .dropbtn {
+  color: #303030;
+  font-size: 1.2rem;
+  border: none;
+  outline: none;
+  padding: 20px 18px;
+  background-color: #fff;
+  font-family: "Ubuntu";
+  font-weight: 500;
+  margin: 0;
+}
+
+@media screen and (max-width: 555px) {
+  .post__nav .post__navbar__container .dropdown .dropbtn {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .post__nav .post__navbar__container .dropdown .dropbtn {
+    font-size: 0.9rem;
+  }
+}
+
+.post__nav .post__navbar__container .dropdown .dropbtn p {
+  margin: 0;
+  display: inline;
+}
+
+@media screen and (max-width: 305px) {
+  .post__nav .post__navbar__container .dropdown .dropbtn p {
+    visibility: hidden;
+    position: absolute;
+    width: 0;
+  }
+}
+
+.post__nav .post__navbar__container .dropdown .dropbtn:hover {
+  background-color: #ddd;
+}
+
+.post__nav .post__navbar__container .dropdown .dropbtn #down__icon {
+  margin: 0 0 0 0.5rem;
+}
+
+@media screen and (max-width: 375px) {
+  .post__nav .post__navbar__container .dropdown .dropbtn #down__icon {
+    margin: 0;
+  }
+}
+
+.post__nav .post__navbar__container .dropdown .dropdown__content {
+  display: none;
+  position: absolute;
+  background-color: #ffff;
+  min-width: 10rem;
+  -webkit-box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.post__nav .post__navbar__container .dropdown .dropdown__content a {
+  float: none;
+  font-weight: 300;
+  color: #303030;
+  font-size: 1rem;
+  padding: 6px 10px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+@media screen and (max-width: 555px) {
+  .post__nav .post__navbar__container .dropdown .dropdown__content a {
+    font-size: 0.8rem;
+  }
+}
+
+.post__nav .post__navbar__container .dropdown .dropdown__content a:hover {
+  background-color: #ddd;
+}
+
+.post__nav .post__navbar__container .dropdown:hover .dropdown__content {
+  display: block;
+}
+/*# sourceMappingURL=post_navbar.css.map */

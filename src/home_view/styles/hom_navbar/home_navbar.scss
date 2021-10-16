@@ -1,0 +1,215 @@
+@import "../components/variables";
+@import "./media.scss";
+
+.navbar-container {
+	background-color: $primary_color;
+	user-select: none;
+
+	.navbar {
+		@include flex__container;
+		margin: 2rem 8.5rem 0 8.5rem;
+		@include media_lg {
+			margin: 2rem;
+		}
+
+		@include media_sm {
+			margin: 1rem 20px;
+		}
+
+		.brand_with_prompt {
+			@include flex__container;
+
+			.brand__container {
+				@include flex__container;
+			}
+
+			.logo {
+				margin-right: 0;
+				margin-bottom: 0.8rem;
+				@include media_sm {
+					width: 40px;
+					height: 40px;
+				}
+			}
+
+			.brandName {
+				@include flex__container;
+				font-size: 2.5rem;
+				padding: 0;
+				margin: 0;
+				color: $text_color_dark;
+				@include media_sm {
+					font-size: 2rem;
+				}
+			}
+
+			.signup_prompt {
+				max-height: min-content;
+				background-color: $background_blue;
+				width: 18rem;
+				text-align: center;
+				margin: 0 1rem;
+				border-radius: 0.5rem;
+				color: $text_color_white;
+				font-size: 0.9rem;
+				padding: 0.7rem;
+				position: absolute;
+				top: 5.5rem;
+				left: 9.5rem;
+				@include media_lg {
+					left: 2rem;
+				}
+
+				@include media_sm {
+					top: 4rem;
+					left: 1rem;
+					font-size: 0.75rem;
+					padding: 0.2rem;
+				}
+
+				@include media_xsm {
+					font-size: 0.7rem;
+					padding: 10px;
+					width: auto;
+				}
+
+				&::after {
+					content: "";
+					position: absolute;
+					top: -10%;
+					width: 10px;
+					height: 10px;
+					border-color: transparent $background_blue $background_blue transparent;
+					border-width: 1px;
+					border-style: solid;
+					background: $background_blue;
+					right: 90%;
+					margin-right: -5px;
+					-moz-transform: rotate(45deg);
+					-webkit-transform: rotate(45deg);
+					transform: rotate(45deg);
+				}
+
+				a {
+					color: rgb(105, 238, 105);
+					font-size: 1.02rem;
+
+					&:hover {
+						text-decoration: underline;
+					}
+				}
+			}
+		}
+
+		.post__nav__items {
+			@include flex__container();
+			font-size: 1.2rem;
+			font-weight: 500;
+
+			a {
+				color: $text_color_nav;
+				padding: 20px 20px;
+				margin: auto 2rem;
+
+				&:hover {
+					color: $text_color_nav_hover;
+				}
+			}
+			.bold {
+				background-color: hsl(240, 38%, 95%);
+			}
+
+			.dropdown {
+				float: left;
+				overflow: hidden;
+
+				.dropbtn {
+					color: $text_color_nav;
+					font-size: 1.2rem;
+					border: none;
+					outline: none;
+					padding: 20px 18px;
+					background-color: $main_navbar_color;
+					// border: 1px solid rgb(62, 78, 221);
+					font-family: "Ubuntu";
+					font-weight: 500;
+					margin: 0;
+
+					&:hover {
+						background-color: hsl(240, 38%, 95%);
+					}
+
+					#down__icon {
+						margin: 0 0 0 0.5rem;
+					}
+				}
+
+				.dropdown__content {
+					display: none;
+					position: absolute;
+					background-color: #ffff;
+					min-width: 160px;
+					box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.2);
+					z-index: 1;
+					// border: 1px solid lightgray;
+
+					a {
+						float: none;
+						font-weight: 300;
+						color: $text_color_dark;
+						font-size: 1rem;
+						padding: 12px 16px;
+						text-decoration: none;
+						display: block;
+						text-align: left;
+
+						&:hover {
+							background-color: #ddd;
+						}
+					}
+				}
+
+				&:hover .dropdown__content {
+					display: block;
+				}
+			}
+		}
+
+		.nav-item {
+			padding: 12px 20px;
+			font-size: 1rem;
+			color: hsl(204, 100%, 45%);
+			font-family: "Open Sans", sans-serif;
+			border: 1px solid hsl(204, 100%, 45%);
+			border-radius: 2rem;
+			background-color: #ffff;
+			position: relative;
+			@include transition_ease;
+			@include media_sm {
+				font-size: 0.8rem;
+				padding: 7px 12px;
+			}
+		}
+
+		.scroll-nav-item {
+			color: hsl(204, 100%, 45%);
+
+			&:hover {
+				border-radius: 2rem;
+			}
+		}
+	}
+}
+
+.active__scroll {
+	background-color: #fff;
+	position: sticky;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 10000;
+	box-shadow: 0 0 3px hsl(0, 0%, 80%);
+	.navbar {
+		padding-top: 5px;
+	}
+}

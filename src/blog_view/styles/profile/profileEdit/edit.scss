@@ -1,0 +1,85 @@
+@import "../../../../home_view/styles/components/variables.scss";
+
+.profileEdit__container {
+	@include flex__container($direction: column);
+	gap: 2rem;
+	input {
+		border: none;
+		width: 25rem;
+		border-bottom: 1px solid gray;
+		outline: none;
+		font-size: 1.07rem;
+	}
+
+	.edit__icon {
+		color: rgb(29, 28, 28);
+		cursor: pointer;
+		&:hover {
+			color: gray;
+		}
+	}
+
+	.profile__pic {
+		img {
+			height: 6rem;
+			width: 6rem;
+			border-radius: 50%;
+			object-fit: cover;
+		}
+		@include flex__container($direction: column);
+		gap: 0.5rem;
+
+		.upload__button {
+			border: none;
+			text-align: center;
+			background-color: #cce3de;
+			padding: 4px;
+			width: 6rem;
+			cursor: pointer;
+			// font-size: 2rem;
+		}
+	}
+
+	.edit__name {
+		@include flex__container;
+		gap: 1rem;
+	}
+
+	.edit__email {
+		@include flex__container;
+		gap: 1rem;
+	}
+
+	.edit__bio {
+		@include flex__container;
+		gap: 1rem;
+
+		div {
+			width: 25rem;
+			min-height: 1.2rem;
+			border-bottom: 1px solid gray;
+			outline: none;
+		}
+	}
+
+	.edit__password {
+		@include flex__container;
+		gap: 1rem;
+		padding-right: 2rem;
+		input {
+			width: 25rem;
+		}
+	}
+
+	.edit__save {
+		border: none;
+		padding: 8px 18px;
+		color: white;
+		font-size: 1.1rem;
+		background-color: #4091c9;
+
+		&:hover {
+			background-color: hsl(205, 56%, 62%);
+		}
+	}
+}

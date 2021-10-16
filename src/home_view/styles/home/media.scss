@@ -1,0 +1,27 @@
+$breakpoint_lg: 850px; // change title font size and subtitle
+$breakpoint_md: 658px;
+$breakpoint_sm: 474px;
+$breakpoint_xsm: 380px;
+
+@mixin media_lg {
+	@media screen and (max-width: $breakpoint_lg) {
+		@content;
+	}
+}
+
+@mixin media_md {
+	@media screen and (max-width: $breakpoint_md) {
+		@content;
+	}
+}
+@mixin media_sm {
+	@media screen and (max-width: $breakpoint_sm) {
+		@content;
+	}
+}
+
+@mixin media_xsm {
+	@media screen and (max-width: $breakpoint_xsm) {
+		@content;
+	}
+}

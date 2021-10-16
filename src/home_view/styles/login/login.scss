@@ -1,0 +1,134 @@
+@import "../components/variables.scss";
+
+.login-background {
+	color: rgba(255, 255, 255, 0.74);
+
+	#login-icon-close {
+		width: 12px;
+		height: 12px;
+		color: lightgray;
+		position: absolute;
+		right: 25rem;
+		top: 1rem;
+		cursor: pointer;
+		@media (max-width: 1300px) {
+			right: 15rem;
+		}
+		@media (max-width: 1100px) {
+			right: 10rem;
+		}
+		@media (max-width: 900px) {
+			right: 5rem;
+		}
+		@media (max-width: 700px) {
+			right: 1rem;
+		}
+	}
+
+	.login-container {
+		@include flex__container($justify: center);
+		flex-direction: column;
+		width: 600px;
+		margin: 0 auto;
+		padding: 44px 56px;
+		color: black;
+
+		@media (max-width: 600px) {
+			padding: 44px 10px;
+			width: auto;
+		}
+
+		#login-title {
+			font-family: "Times New Roman", Times, serif;
+			font-weight: lighter;
+			margin: 2rem auto 4rem auto;
+		}
+
+		#login-icon-google {
+			width: 18px;
+			height: 18px;
+			margin: auto 1rem auto 0;
+		}
+
+		#login-icon-facebook {
+			width: 18px;
+			height: 18px;
+			margin: auto 1rem auto 0;
+		}
+
+		#login-icon-apple {
+			width: 20px;
+			height: 20px;
+			margin: auto 1rem auto 0;
+		}
+
+		#login-icon-twitter {
+			width: 22px;
+			height: 22px;
+			margin: auto 1rem auto 0;
+		}
+
+		#login-icon-email {
+			width: 16px;
+			height: 16px;
+			object-fit: cover;
+			margin: auto 1rem auto 0;
+		}
+
+		.signIn-btn {
+			margin: 0.5rem auto;
+			text-align: left;
+			background-color: #ffff;
+			border: 1px solid rgb(153, 150, 150);
+			padding: 10px 50px;
+			border-radius: 2rem;
+			cursor: pointer;
+
+			&:hover {
+				border-color: #4e1f9d;
+			}
+
+			&.twitter {
+				padding: 10px 68px 10px 50px;
+			}
+
+			&.email {
+				padding: 12px 50px 12px 52px;
+			}
+
+			&.google {
+				padding: 10px 68px 10px 50px;
+			}
+
+			&.apple {
+				padding: 10px 75px 10px 50px;
+			}
+		}
+		.login-createOne {
+			margin: 3rem auto;
+
+			#createAccountLink {
+				text-decoration: none;
+				color: green;
+				font-weight: bolder;
+			}
+		}
+		.login-info {
+			font-size: 0.8rem;
+			color: gray;
+			text-align: center;
+			margin: 1.4rem auto;
+			width: 80%;
+
+			a {
+				/* text-decoration: none; */
+				color: gray;
+			}
+
+			#termsAndService-link,
+			#privacyPolicy-link {
+				text-decoration: underline;
+			}
+		}
+	}
+}

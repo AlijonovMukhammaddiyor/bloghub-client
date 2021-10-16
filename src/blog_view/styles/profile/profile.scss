@@ -1,0 +1,109 @@
+@import "../../../home_view/styles/components/variables.scss";
+@import "./media/media.scss";
+
+.profile__container {
+	@include transition_ease;
+
+	.black__part {
+		height: 12rem;
+		background-color: #001427;
+	}
+
+	.edit__profile {
+		position: absolute;
+		width: 100%;
+		top: 8rem;
+		@include flex__container($direction: column);
+		img {
+			height: 8rem;
+			width: 8rem;
+			border-radius: 50%;
+			border: 2px solid white;
+		}
+
+		h2 {
+			margin: 0 auto 1rem;
+			color: white;
+		}
+
+		button {
+			padding: 4px 4px;
+			border: 1px solid hsl(0, 0%, 63%);
+			background-color: #fff;
+			color: $text_color_dark;
+			@include transition_ease;
+
+			&:hover {
+				cursor: pointer;
+				border-color: black;
+				@include transition_ease;
+			}
+		}
+
+		p {
+			color: gray;
+			width: 20rem;
+			margin: 0.4rem auto 1rem;
+			text-align: center;
+		}
+	}
+
+	.follow__info {
+		margin: 9rem 8rem 2rem;
+		border: 1px solid gray;
+		height: 5rem;
+		text-align: center;
+		@include flex__container($justify: center);
+		gap: 2.5rem;
+		@include breakpoint_md {
+			margin: 9rem 2rem 2rem;
+		}
+
+		@include breakpoint_sm {
+			margin: 9rem 0.2rem 2rem;
+			font-size: 0.9rem;
+			height: 3rem;
+		}
+
+		a {
+			color: $text_color_dark;
+
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+	}
+
+	.recent__posts {
+		margin: auto;
+		width: 58.5rem;
+
+		@media (max-width: 870px) {
+			width: 48rem;
+		}
+
+		@media (max-width: 800px) {
+			width: auto;
+			margin: 0 2rem;
+		}
+
+		@include breakpoint_md {
+			margin: 0 2rem;
+		}
+
+		@include breakpoint_sm {
+			margin: 0.2rem;
+		}
+
+		.posts {
+			border: 1px solid gray;
+			height: 100vh;
+		}
+
+		h2 {
+			@include breakpoint_sm {
+				font-size: 1.2rem;
+			}
+		}
+	}
+}

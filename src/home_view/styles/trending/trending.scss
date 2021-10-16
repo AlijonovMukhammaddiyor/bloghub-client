@@ -1,0 +1,90 @@
+@import "../components/variables.scss";
+@import "./media.scss";
+
+.trending-container {
+	padding: 4rem 0 2rem;
+	width: 75rem;
+	margin: auto;
+	overflow: hidden;
+
+	@include media_lg {
+		width: 65rem;
+		padding: 4rem 2rem 2rem;
+	}
+
+	@include media_lg2 {
+		width: auto;
+		padding: 4rem 2rem 2rem;
+	}
+
+	@include media_md {
+		padding: 4rem 4rem 2rem;
+	}
+
+	@media (max-width: 760px) {
+		padding: 4rem 2rem 2rem;
+	}
+
+	@include media_sm {
+		padding: 4rem 1rem 2rem;
+	}
+
+	.trending__title {
+		@include flex__container($align: baseline, $justify: flex-start);
+		margin: 0 0 1.5rem 1.3rem;
+
+		@include media_lg {
+			margin-left: 0;
+		}
+
+		@include media_md {
+			font-size: 0.9rem;
+		}
+
+		// position: absolute;
+		// left: 0;
+		// top: 52rem;
+
+		// width: 12rem;
+		// background-color: #1da2c4;
+		// border-radius: 0 2.2rem 2.2rem 0;
+		// padding-top: 4px;
+		// padding-left: 8px;
+		// // color: white;
+
+		#star__icon {
+			margin: 0 0.5rem 0 1rem;
+			color: hsl(50, 100%, 50%);
+			font-size: 1.2rem;
+			@include media_lg {
+				margin-left: 0;
+			}
+		}
+	}
+	.carousel {
+		cursor: pointer;
+		padding-left: auto;
+		align-items: center;
+		margin: auto;
+	}
+
+	.trending__body {
+		@include flex__container($justify: space-around, $align: flex-start);
+		flex-wrap: wrap;
+		gap: 1rem;
+
+		@include media_lg2 {
+			gap: 5%;
+			justify-content: space-between;
+		}
+
+		@include media_md {
+			gap: 2%;
+			justify-content: space-around;
+		}
+
+		.first__trending__post {
+			margin-top: 0;
+		}
+	}
+}

@@ -1,0 +1,37 @@
+@import "../components/variables";
+
+$breakpoint_lg: 1200px;
+$breakpoint_lg2: 1050px;
+$breakpoint_md: 900px;
+$breakpoint_sm: 620px;
+$breakpoint_xsm: 470px;
+
+@mixin media_lg {
+	@media (max-width: $breakpoint_lg) {
+		@content;
+	}
+}
+
+@mixin media_lg2 {
+	@media (max-width: $breakpoint_lg2) {
+		@content;
+	}
+}
+
+@mixin media_md {
+	@media (max-width: $breakpoint_md) {
+		@content;
+	}
+}
+
+@mixin media_sm {
+	@media (max-width: $breakpoint_sm) {
+		@content;
+	}
+}
+
+@mixin media_xsm {
+	@media (max-width: $breakpoint_xsm) {
+		@content;
+	}
+}

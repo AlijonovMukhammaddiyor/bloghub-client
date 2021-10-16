@@ -1,0 +1,108 @@
+@import "../../components/variables";
+@import "../media.scss";
+
+.recent__posts__container {
+	width: 48rem;
+	margin: 2rem 0;
+	@media (max-width: 900px) {
+		width: 95%;
+		margin: 0 auto;
+		padding: 0 auto;
+	}
+
+	@include media_lg2 {
+		width: 44rem;
+	}
+
+	@media (max-width: 1040px) {
+		width: 40rem;
+	}
+
+	@include media_md {
+		width: 85%;
+		margin: auto;
+		padding: 0;
+	}
+
+	@media (max-width: 900px) {
+		width: 92%;
+	}
+
+	@include media_md2 {
+		width: 100%;
+		padding: 0;
+	}
+
+	@media (max-width: 975px) and (min-width: 900px) {
+		margin-left: 0;
+	}
+	.recent__posts__header {
+		.default {
+			@include flex__container($justify: left);
+			margin: 2rem 0 1.5rem;
+
+			.title {
+				font-size: 1.1rem;
+			}
+
+			#recent-icon {
+				color: blue;
+				font-size: 1.3rem;
+				margin: 0 0.5rem 0.2rem 0;
+			}
+		}
+
+		.tag__icon {
+			width: 25px;
+			margin-right: 0.5rem;
+			height: 25px;
+			background-color: lightgray;
+			border-radius: 50%;
+			padding: 3px;
+		}
+
+		.author {
+			margin-bottom: 1rem;
+			padding-top: 2rem;
+			padding-bottom: 2rem;
+			// border-top: 1px solid lightgray;
+			border-bottom: 1px solid lightgray;
+			color: #48af8d;
+			width: 100%;
+			@include flex__container;
+
+			.left {
+				@include flex__container;
+				gap: 1rem;
+				img {
+					width: 60px;
+					height: 60px;
+					border: 1px solid greenyellow;
+					object-fit: cover;
+					border-radius: 50%;
+				}
+			}
+
+			.right {
+				p {
+					padding: 8px 12px;
+					background-color: green;
+					color: white;
+					border-radius: 2rem;
+
+					&:hover {
+						background-color: hsl(120, 100%, 20%);
+					}
+				}
+			}
+		}
+	}
+
+	.recent_posts {
+		@include flex__container;
+	}
+
+	#recent-icon {
+		margin: 0 0.3rem 0 0;
+	}
+}

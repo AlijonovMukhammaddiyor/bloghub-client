@@ -1,0 +1,148 @@
+.profile__container {
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+.profile__container .black__part {
+  height: 12rem;
+  background-color: #001427;
+}
+
+.profile__container .edit__profile {
+  position: absolute;
+  width: 100%;
+  top: 8rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.profile__container .edit__profile img {
+  height: 8rem;
+  width: 8rem;
+  border-radius: 50%;
+  border: 2px solid white;
+}
+
+.profile__container .edit__profile h2 {
+  margin: 0 auto 1rem;
+  color: white;
+}
+
+.profile__container .edit__profile button {
+  padding: 4px 4px;
+  border: 1px solid #a1a1a1;
+  background-color: #fff;
+  color: #303030;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+.profile__container .edit__profile button:hover {
+  cursor: pointer;
+  border-color: black;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+.profile__container .edit__profile p {
+  color: gray;
+  width: 20rem;
+  margin: 0.4rem auto 1rem;
+  text-align: center;
+}
+
+.profile__container .follow__info {
+  margin: 9rem 8rem 2rem;
+  border: 1px solid gray;
+  height: 5rem;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  gap: 2.5rem;
+}
+
+@media (max-width: 768px) {
+  .profile__container .follow__info {
+    margin: 9rem 2rem 2rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .profile__container .follow__info {
+    margin: 9rem 0.2rem 2rem;
+    font-size: 0.9rem;
+    height: 3rem;
+  }
+}
+
+.profile__container .follow__info a {
+  color: #303030;
+}
+
+.profile__container .follow__info a:hover {
+  text-decoration: underline;
+}
+
+.profile__container .recent__posts {
+  margin: auto;
+  width: 58.5rem;
+}
+
+@media (max-width: 870px) {
+  .profile__container .recent__posts {
+    width: 48rem;
+  }
+}
+
+@media (max-width: 800px) {
+  .profile__container .recent__posts {
+    width: auto;
+    margin: 0 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .profile__container .recent__posts {
+    margin: 0 2rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .profile__container .recent__posts {
+    margin: 0.2rem;
+  }
+}
+
+.profile__container .recent__posts .posts {
+  border: 1px solid gray;
+  height: 100vh;
+}
+
+@media (max-width: 400px) {
+  .profile__container .recent__posts h2 {
+    font-size: 1.2rem;
+  }
+}
+/*# sourceMappingURL=profile.css.map */

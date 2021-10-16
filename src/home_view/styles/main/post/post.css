@@ -1,0 +1,403 @@
+.recent__post__card {
+  margin-bottom: 2.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.recent__post__card .recent__post__body {
+  margin: 0.5rem 0;
+  width: 33rem;
+}
+
+@media (max-width: 1160px) {
+  .recent__post__card .recent__post__body {
+    width: 65%;
+  }
+}
+
+@media (max-width: 975px) {
+  .recent__post__card .recent__post__body {
+    width: 33rem;
+  }
+}
+
+@media (max-width: 680px) {
+  .recent__post__card .recent__post__body {
+    width: 65%;
+  }
+}
+
+.recent__post__card .recent__post__body .recent__post__header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: left;
+      -ms-flex-pack: left;
+          justify-content: left;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  gap: 0.2rem;
+  font-family: "Exo";
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.recent__post__card .recent__post__body .recent__post__header a {
+  color: #303030;
+}
+
+.recent__post__card .recent__post__body .recent__post__header #profile-icon {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+}
+
+@media (max-width: 680px) {
+  .recent__post__card .recent__post__body .recent__post__header #profile-icon {
+    width: 15px;
+    height: 15px;
+  }
+}
+
+.recent__post__card .recent__post__body .recent__post__header .post__author {
+  font-size: 0.9rem;
+  font-weight: 700;
+  font-family: "Times New Roman", Times, serif;
+  position: relative;
+}
+
+.recent__post__card .recent__post__body .recent__post__header .post__author #author__name {
+  font-size: 0.9rem;
+  color: #48af8d;
+}
+
+@media (max-width: 680px) {
+  .recent__post__card .recent__post__body .recent__post__header .post__author #author__name {
+    font-size: 0.7rem;
+  }
+}
+
+.recent__post__card .recent__post__body .recent__post__header .post__author #profile__hoverbox {
+  -webkit-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
+  visibility: hidden;
+  width: 16rem;
+  background-color: #fff;
+  text-align: center;
+  border-radius: 6px 6px 6px 0;
+  position: absolute;
+  z-index: 10;
+  bottom: 1.6rem;
+  left: -1.6rem;
+  border: 1px solid #dfdfdf;
+  -webkit-box-shadow: -2px -2px 2px #ebf5f5;
+          box-shadow: -2px -2px 2px #ebf5f5;
+}
+
+.recent__post__card .recent__post__body .recent__post__header .post__author #profile__hoverbox::after {
+  content: "";
+  position: absolute;
+  top: 94%;
+  width: 10px;
+  height: 10px;
+  border-color: transparent #dfdfdf #dfdfdf transparent;
+  border-width: 1px;
+  border-style: solid;
+  background: white;
+  right: 75%;
+  margin-right: -5px;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.recent__post__card .recent__post__body .recent__post__header .post__author:hover #profile__hoverbox {
+  -webkit-transition: all 2s ease-in-out;
+  transition: all 2s ease-in-out;
+  visibility: visible;
+}
+
+@media (max-width: 975px) {
+  .recent__post__card .recent__post__body .recent__post__header .post__author:hover #profile__hoverbox {
+    visibility: hidden;
+  }
+}
+
+.recent__post__card .recent__post__body .recent__post__main .recent__post__title {
+  max-height: -webkit-min-content;
+  max-height: -moz-min-content;
+  max-height: min-content;
+  /* text-overflow: ellipsis; */
+  text-overflow: ellipsis;
+  overflow: hidden;
+  overflow-wrap: break-word;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.recent__post__card .recent__post__body .recent__post__main .recent__post__title h2 {
+  font-size: 1.5rem;
+}
+
+@media (max-width: 1160px) {
+  .recent__post__card .recent__post__body .recent__post__main .recent__post__title h2 {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 975px) {
+  .recent__post__card .recent__post__body .recent__post__main .recent__post__title h2 {
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 800px) {
+  .recent__post__card .recent__post__body .recent__post__main .recent__post__title h2 {
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 680px) {
+  .recent__post__card .recent__post__body .recent__post__main .recent__post__title h2 {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 620px) {
+  .recent__post__card .recent__post__body .recent__post__main .recent__post__title h2 {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 470px) {
+  .recent__post__card .recent__post__body .recent__post__main .recent__post__title h2 {
+    font-size: 0.8rem;
+  }
+}
+
+.recent__post__card .recent__post__body .recent__post__main .recent__post__title h2 {
+  line-height: 1.6rem;
+  color: #303030;
+}
+
+@media (max-width: 680px) {
+  .recent__post__card .recent__post__body .recent__post__main .recent__post__title h2 {
+    line-height: 1.4rem;
+  }
+}
+
+.recent__post__card .recent__post__body .recent__post__main .recent__post__subtitle {
+  font-weight: 400;
+  margin: 0.5rem 0;
+  line-height: 1.4rem;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  overflow-wrap: break-word;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+@media (max-width: 800px) {
+  .recent__post__card .recent__post__body .recent__post__main .recent__post__subtitle {
+    width: 95%;
+  }
+}
+
+@media (max-width: 680px) {
+  .recent__post__card .recent__post__body .recent__post__main .recent__post__subtitle {
+    position: absolute;
+    visibility: hidden;
+    display: block;
+    width: 0;
+  }
+}
+
+.recent__post__card .recent__post__body .recent__post__main .recent__post__subtitle a {
+  color: #666666;
+  font-weight: 300;
+}
+
+.recent__post__card .recent__post__body .recent__post__footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+@media (max-width: 680px) {
+  .recent__post__card .recent__post__body .recent__post__footer {
+    margin-top: 0.8rem;
+  }
+}
+
+.recent__post__card .recent__post__body .recent__post__footer .subfooter__left {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  gap: 0.5rem;
+  font-family: "Rubik";
+  color: gray;
+  font-weight: 300;
+  font-size: 13px;
+}
+
+@media (max-width: 500px) {
+  .recent__post__card .recent__post__body .recent__post__footer .subfooter__left {
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 500px) {
+  .recent__post__card .recent__post__body .recent__post__footer .subfooter__left .interpunct,
+  .recent__post__card .recent__post__body .recent__post__footer .subfooter__left .post__length {
+    position: absolute;
+    visibility: hidden;
+    width: 0;
+  }
+}
+
+.recent__post__card .recent__post__body .recent__post__footer .subfooter__left button {
+  padding: 4px 10px;
+  background-color: #e6e6e6;
+  color: #0b132b;
+  border: none;
+  border-radius: 2rem;
+  cursor: pointer;
+}
+
+@media (max-width: 500px) {
+  .recent__post__card .recent__post__body .recent__post__footer .subfooter__left button {
+    font-size: 10px;
+    padding: 2px 4px;
+  }
+}
+
+.recent__post__card .recent__post__body .recent__post__footer .subfooter__left button:hover {
+  background-color: #d9d9d9;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+.recent__post__card .recent__post__body .recent__post__footer .subfooter__right .thumpsUp {
+  width: 25px;
+  height: 25px;
+  margin: 0 0.5rem;
+}
+
+@media (max-width: 680px) {
+  .recent__post__card .recent__post__body .recent__post__footer .subfooter__right .thumpsUp {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+.recent__post__card .recent__post__body .recent__post__footer .subfooter__right img {
+  width: 20px;
+  height: 20px;
+  margin: 0 0.5rem;
+}
+
+@media (max-width: 680px) {
+  .recent__post__card .recent__post__body .recent__post__footer .subfooter__right img {
+    width: 15px;
+    height: 15px;
+  }
+}
+
+.recent__post__card .recent__post__img {
+  overflow: hidden;
+  width: 14rem;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  text-align: right;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+@media (max-width: 800px) {
+  .recent__post__card .recent__post__img {
+    width: 40%;
+  }
+}
+
+@media (max-width: 680px) {
+  .recent__post__card .recent__post__img {
+    width: 14rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .recent__post__card .recent__post__img {
+    width: 11rem;
+  }
+}
+
+.recent__post__card .recent__post__img img {
+  width: 14rem;
+  height: 9rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+@media (max-width: 680px) {
+  .recent__post__card .recent__post__img img {
+    width: 11rem;
+    height: 7rem;
+    -o-object-fit: contain;
+       object-fit: contain;
+  }
+}
+
+@media (max-width: 500px) {
+  .recent__post__card .recent__post__img img {
+    width: 9rem;
+    height: 6rem;
+    -o-object-fit: contain;
+       object-fit: contain;
+  }
+}
+
+.recent__post__card .recent__post__img img:hover {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+}
+/*# sourceMappingURL=post.css.map */

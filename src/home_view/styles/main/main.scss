@@ -1,0 +1,29 @@
+@import "../components/variables";
+@import "./media.scss";
+
+.main__container {
+	margin: auto;
+	width: 75rem;
+	@include flex__container($direction: row-reverse, $align: none);
+	@include media_lg {
+		width: 95%;
+	}
+	gap: 1rem;
+
+	@include media_md {
+		display: block;
+	}
+}
+
+@media (max-width: 1200px) {
+	.main__container {
+		// padding: 0 2rem;
+	}
+}
+
+@media (max-width: 900px) {
+	.main__container {
+		display: block;
+		padding: 0;
+	}
+}

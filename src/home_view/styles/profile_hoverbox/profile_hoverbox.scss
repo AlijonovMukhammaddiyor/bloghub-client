@@ -1,0 +1,79 @@
+@mixin media_md {
+	@media (max-width: 800px) {
+		@content;
+	}
+}
+
+.profile__hoverbox {
+	position: relative;
+	text-align: left;
+	display: flex;
+	flex-direction: column;
+	// gap: 0.7rem;
+	align-items: flex-start;
+	background-color: white;
+	padding: 1rem 1.5rem;
+	z-index: 1001;
+	font-family: "Times New Roman", Times, serif;
+	width: 10rem;
+	box-shadow: 0 0 20px lightgray;
+
+	@include media_md {
+		border-radius: 0 15px 0;
+	}
+
+	#hr {
+		width: 100%;
+		border: 0;
+		height: 0;
+		margin: 0.8rem 0;
+		border-top: 1px solid rgba(0, 0, 0, 0.1);
+		border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+	}
+
+	p {
+		cursor: pointer;
+		color: black;
+	}
+
+	.edit__profile {
+		margin-bottom: 1rem;
+	}
+
+	#sign__out {
+		color: rgb(85, 199, 85);
+	}
+
+	&:after,
+	&:before {
+		bottom: 100%;
+		left: 50%;
+		border: solid transparent;
+		content: "";
+		height: 0;
+		width: 0;
+		position: absolute;
+		pointer-events: none;
+	}
+
+	&:after {
+		border-color: rgba(136, 183, 213, 0);
+		border-bottom-color: white;
+		border-width: 10px;
+		margin-left: -14px;
+		@include media_md {
+			margin-left: 50px;
+		}
+	}
+
+	&:before {
+		border-color: rgba(194, 225, 245, 0);
+		border-bottom-color: lightgray;
+		border-width: 10px;
+		margin-left: -14px;
+
+		@include media_md {
+			margin-left: 50px;
+		}
+	}
+}

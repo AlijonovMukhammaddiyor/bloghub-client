@@ -1,0 +1,300 @@
+@import "../../components/variables.scss";
+
+$img_width: 46rem;
+$container_width: 55rem;
+$container_width_2: 46rem;
+@mixin break_1 {
+	@media (max-width: 950px) {
+		@content;
+	}
+}
+
+@mixin break_2 {
+	@media (max-width: 800px) {
+		@content;
+	}
+}
+
+@mixin break_3 {
+	@media (max-width: 500px) {
+		@content;
+	}
+}
+
+@mixin break_4 {
+	@media (max-width: 430px) {
+		@content;
+	}
+}
+
+.post__filter {
+	@include flex__container($direction: column, $align: flex-start);
+	gap: 1rem;
+	padding: 0 2rem;
+	margin: 3rem auto;
+	width: $container_width;
+	overflow: hidden;
+	// position: relative;
+
+	@include break_1 {
+		padding: 0;
+		width: $img_width;
+	}
+
+	@include break_2 {
+		padding: 0 2rem;
+		width: auto;
+	}
+
+	.delete__post {
+		margin-top: 1rem;
+		position: relative;
+		@include transition_ease(0.5s);
+
+		.cog {
+			color: hsl(0, 0%, 40%);
+
+			&:hover {
+				color: hsl(0, 0%, 20%);
+			}
+		}
+
+		.clicked {
+			animation: anim 0.2s ease-in-out;
+			-webkit-animation: anim 0.2s ease-in-out;
+		}
+
+		@keyframes anim {
+			100% {
+				transform: rotate(45deg);
+				-webkit-transform: rotate(90deg);
+				-moz-transform: rotate(90deg);
+				-ms-transform: rotate(90deg);
+				-o-transform: rotate(90deg);
+			}
+		}
+
+		.options {
+			@include flex__container($direction: column);
+			gap: 1rem;
+			position: absolute;
+			top: 1.5rem;
+			padding: 10px;
+			border-radius: 10px;
+			right: -2rem;
+			box-shadow: 0 0 10px lightgray;
+			width: 5rem;
+
+			a {
+				color: black;
+
+				&:hover {
+					text-decoration: underline;
+				}
+			}
+
+			&:after {
+				content: "";
+				position: absolute;
+				top: -17%;
+				right: 2rem;
+				margin-left: -5px;
+				border-width: 10px;
+				border-style: solid;
+				border-color: transparent transparent transparent hsl(0, 0%, 98%);
+				transform: rotate(-90deg);
+			}
+		}
+
+		@include break_1 {
+			right: 0;
+		}
+
+		&:hover {
+			color: black;
+		}
+	}
+
+	hr {
+		border: 0;
+		display: block;
+		height: 1px;
+		width: $img_width;
+		border-top: 1px solid rgba(0, 0, 0, 0.1);
+		border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+
+		@include break_1 {
+			width: $container_width;
+		}
+		@include break_2 {
+			width: 100%;
+		}
+	}
+
+	.post__filter__body {
+		@include flex__container;
+		width: 100%;
+
+		.post__filter__author {
+			@include flex__container;
+			width: $img_width;
+			gap: 0.5rem;
+
+			@include break_3 {
+				width: 100%;
+			}
+
+			.post__filter__author__inner {
+				@include flex__container;
+				gap: 0.5rem;
+			}
+
+			.profile__icon {
+				border-radius: 50%;
+				height: 40px;
+				width: 40px;
+				object-fit: cover;
+				border: 2px solid green;
+
+				@include break_3 {
+					height: 30px;
+					width: 30px;
+					border-width: 1px;
+				}
+			}
+
+			.author__name {
+				font-weight: lighter;
+				color: hsl(120, 75%, 35%);
+
+				@include break_3 {
+					font-size: 0.8rem;
+				}
+			}
+
+			.small__footer {
+				@include flex__container;
+				gap: 0.5rem;
+				p {
+					font-size: small;
+					color: gray;
+					font-weight: lighter;
+					margin-top: 0.3rem;
+
+					@include break_3 {
+						font-size: 0.6rem;
+					}
+				}
+			}
+		}
+	}
+
+	.post__filter__img {
+		img {
+			position: relative;
+			width: $img_width;
+			height: 0.38 * $img_width;
+			object-fit: cover;
+			object-position: top;
+		}
+	}
+
+	.post__filter__title {
+		line-height: 2rem;
+		@include break_3 {
+			line-height: 1.2rem;
+		}
+
+		.post__title {
+			width: $img_width;
+
+			@include break_1 {
+				width: 100%;
+			}
+
+			@include break_2 {
+				width: 100%;
+			}
+		}
+		h1 {
+			font-size: 1.6rem;
+
+			@media (max-width: 700px) {
+				font-size: 1.3rem;
+			}
+			@include break_3 {
+				font-size: 1rem;
+			}
+		}
+
+		p {
+			color: gray;
+			font-weight: lighter;
+			font-size: small;
+			margin-top: 1rem;
+		}
+	}
+
+	.post__filter__footer {
+		@include flex__container($justify: space-between);
+		color: gray;
+		width: $img_width;
+		font-size: small;
+		font-weight: lighter;
+		padding: 1rem 0;
+
+		@include break_2 {
+			width: 100%;
+		}
+
+		.claps {
+			@include flex__container;
+			gap: 0.5rem;
+			.clap__icon {
+				color: gray;
+				width: 30px;
+				height: 30px;
+			}
+
+			p {
+				@include break_4 {
+					display: none;
+				}
+			}
+		}
+
+		.saves {
+			@include flex__container;
+			gap: 0.5rem;
+
+			.bookmark {
+				width: 20px;
+				height: 20px;
+			}
+
+			p {
+				@include break_4 {
+					display: none;
+				}
+			}
+		}
+
+		.cats {
+			margin-left: 1rem;
+			a {
+				color: white;
+				font-weight: lighter;
+			}
+			.category {
+				padding: 5px 10px;
+				background-color: rgb(45, 192, 236);
+				border-radius: 1rem;
+				@include transition_ease;
+
+				&:hover {
+					background-color: rgb(40, 170, 206);
+				}
+			}
+		}
+	}
+}

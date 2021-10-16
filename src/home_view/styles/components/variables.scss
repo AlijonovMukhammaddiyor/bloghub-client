@@ -1,0 +1,31 @@
+$primary-color: hsl(0, 0%, 100%);
+$main_navbar_color: #f6f6fb;
+$active_color: rgb(246, 246, 252);
+$text_color_dark: hsl(0, 0%, 19%);
+$text_color_gray: hsl(0, 0%, 50%);
+$text_color_white: hsl(0, 0%, 100%);
+$background_blue: #0099ff;
+$text_link_color: hsl(120, 73%, 67%);
+$text_link_color_hover: hsl(120, 58%, 57%);
+$text_author_color: hsl(0, 0%, 15%);
+$text_color_nav: hsl(236, 74%, 54%);
+$text_color_nav_hover: hsl(236, 74%, 68%);
+$text_color_subtitle: hsl(0, 0%, 40%);
+
+@mixin sticky__container($top: 0, $left: 0) {
+	position: -webkit-sticky;
+	position: sticky;
+	top: $top;
+	left: $left;
+}
+
+@mixin flex__container($align: center, $justify: space-between, $direction: row) {
+	display: flex;
+	align-items: $align;
+	justify-content: $justify;
+	flex-direction: $direction;
+}
+
+@mixin transition_ease($time: 0.2s) {
+	transition: all $time ease-in-out;
+}

@@ -1,0 +1,162 @@
+.login-background {
+  color: rgba(255, 255, 255, 0.74);
+}
+
+.login-background #login-icon-close {
+  width: 12px;
+  height: 12px;
+  color: lightgray;
+  position: absolute;
+  right: 25rem;
+  top: 1rem;
+  cursor: pointer;
+}
+
+@media (max-width: 1300px) {
+  .login-background #login-icon-close {
+    right: 15rem;
+  }
+}
+
+@media (max-width: 1100px) {
+  .login-background #login-icon-close {
+    right: 10rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .login-background #login-icon-close {
+    right: 5rem;
+  }
+}
+
+@media (max-width: 700px) {
+  .login-background #login-icon-close {
+    right: 1rem;
+  }
+}
+
+.login-background .login-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  flex-direction: column;
+  width: 600px;
+  margin: 0 auto;
+  padding: 44px 56px;
+  color: black;
+}
+
+@media (max-width: 600px) {
+  .login-background .login-container {
+    padding: 44px 10px;
+    width: auto;
+  }
+}
+
+.login-background .login-container #login-title {
+  font-family: "Times New Roman", Times, serif;
+  font-weight: lighter;
+  margin: 2rem auto 4rem auto;
+}
+
+.login-background .login-container #login-icon-google {
+  width: 18px;
+  height: 18px;
+  margin: auto 1rem auto 0;
+}
+
+.login-background .login-container #login-icon-facebook {
+  width: 18px;
+  height: 18px;
+  margin: auto 1rem auto 0;
+}
+
+.login-background .login-container #login-icon-apple {
+  width: 20px;
+  height: 20px;
+  margin: auto 1rem auto 0;
+}
+
+.login-background .login-container #login-icon-twitter {
+  width: 22px;
+  height: 22px;
+  margin: auto 1rem auto 0;
+}
+
+.login-background .login-container #login-icon-email {
+  width: 16px;
+  height: 16px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin: auto 1rem auto 0;
+}
+
+.login-background .login-container .signIn-btn {
+  margin: 0.5rem auto;
+  text-align: left;
+  background-color: #ffff;
+  border: 1px solid #999696;
+  padding: 10px 50px;
+  border-radius: 2rem;
+  cursor: pointer;
+}
+
+.login-background .login-container .signIn-btn:hover {
+  border-color: #4e1f9d;
+}
+
+.login-background .login-container .signIn-btn.twitter {
+  padding: 10px 68px 10px 50px;
+}
+
+.login-background .login-container .signIn-btn.email {
+  padding: 12px 50px 12px 52px;
+}
+
+.login-background .login-container .signIn-btn.google {
+  padding: 10px 68px 10px 50px;
+}
+
+.login-background .login-container .signIn-btn.apple {
+  padding: 10px 75px 10px 50px;
+}
+
+.login-background .login-container .login-createOne {
+  margin: 3rem auto;
+}
+
+.login-background .login-container .login-createOne #createAccountLink {
+  text-decoration: none;
+  color: green;
+  font-weight: bolder;
+}
+
+.login-background .login-container .login-info {
+  font-size: 0.8rem;
+  color: gray;
+  text-align: center;
+  margin: 1.4rem auto;
+  width: 80%;
+}
+
+.login-background .login-container .login-info a {
+  /* text-decoration: none; */
+  color: gray;
+}
+
+.login-background .login-container .login-info #termsAndService-link,
+.login-background .login-container .login-info #privacyPolicy-link {
+  text-decoration: underline;
+}
+/*# sourceMappingURL=login.css.map */

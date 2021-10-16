@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "register.scss",
+        "../components/variables.scss"
+    ],
+    "names": [],
+    "file": "register.css"
+}

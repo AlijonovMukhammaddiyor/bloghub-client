@@ -1,0 +1,160 @@
+.profileEdit__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 2rem;
+}
+
+.profileEdit__container input {
+  border: none;
+  width: 25rem;
+  border-bottom: 1px solid gray;
+  outline: none;
+  font-size: 1.07rem;
+}
+
+.profileEdit__container .edit__icon {
+  color: #1d1c1c;
+  cursor: pointer;
+}
+
+.profileEdit__container .edit__icon:hover {
+  color: gray;
+}
+
+.profileEdit__container .profile__pic {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 0.5rem;
+}
+
+.profileEdit__container .profile__pic img {
+  height: 6rem;
+  width: 6rem;
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.profileEdit__container .profile__pic .upload__button {
+  border: none;
+  text-align: center;
+  background-color: #cce3de;
+  padding: 4px;
+  width: 6rem;
+  cursor: pointer;
+}
+
+.profileEdit__container .edit__name {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  gap: 1rem;
+}
+
+.profileEdit__container .edit__email {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  gap: 1rem;
+}
+
+.profileEdit__container .edit__bio {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  gap: 1rem;
+}
+
+.profileEdit__container .edit__bio div {
+  width: 25rem;
+  min-height: 1.2rem;
+  border-bottom: 1px solid gray;
+  outline: none;
+}
+
+.profileEdit__container .edit__password {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  gap: 1rem;
+  padding-right: 2rem;
+}
+
+.profileEdit__container .edit__password input {
+  width: 25rem;
+}
+
+.profileEdit__container .edit__save {
+  border: none;
+  padding: 8px 18px;
+  color: white;
+  font-size: 1.1rem;
+  background-color: #4091c9;
+}
+
+.profileEdit__container .edit__save:hover {
+  background-color: #68a7d4;
+}
+/*# sourceMappingURL=edit.css.map */

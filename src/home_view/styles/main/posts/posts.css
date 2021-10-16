@@ -1,0 +1,167 @@
+.recent__posts__container {
+  width: 48rem;
+  margin: 2rem 0;
+}
+
+@media (max-width: 900px) {
+  .recent__posts__container {
+    width: 95%;
+    margin: 0 auto;
+    padding: 0 auto;
+  }
+}
+
+@media (max-width: 1160px) {
+  .recent__posts__container {
+    width: 44rem;
+  }
+}
+
+@media (max-width: 1040px) {
+  .recent__posts__container {
+    width: 40rem;
+  }
+}
+
+@media (max-width: 975px) {
+  .recent__posts__container {
+    width: 85%;
+    margin: auto;
+    padding: 0;
+  }
+}
+
+@media (max-width: 900px) {
+  .recent__posts__container {
+    width: 92%;
+  }
+}
+
+@media (max-width: 800px) {
+  .recent__posts__container {
+    width: 100%;
+    padding: 0;
+  }
+}
+
+@media (max-width: 975px) and (min-width: 900px) {
+  .recent__posts__container {
+    margin-left: 0;
+  }
+}
+
+.recent__posts__container .recent__posts__header .default {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: left;
+      -ms-flex-pack: left;
+          justify-content: left;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  margin: 2rem 0 1.5rem;
+}
+
+.recent__posts__container .recent__posts__header .default .title {
+  font-size: 1.1rem;
+}
+
+.recent__posts__container .recent__posts__header .default #recent-icon {
+  color: blue;
+  font-size: 1.3rem;
+  margin: 0 0.5rem 0.2rem 0;
+}
+
+.recent__posts__container .recent__posts__header .tag__icon {
+  width: 25px;
+  margin-right: 0.5rem;
+  height: 25px;
+  background-color: lightgray;
+  border-radius: 50%;
+  padding: 3px;
+}
+
+.recent__posts__container .recent__posts__header .author {
+  margin-bottom: 1rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid lightgray;
+  color: #48af8d;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.recent__posts__container .recent__posts__header .author .left {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  gap: 1rem;
+}
+
+.recent__posts__container .recent__posts__header .author .left img {
+  width: 60px;
+  height: 60px;
+  border: 1px solid greenyellow;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 50%;
+}
+
+.recent__posts__container .recent__posts__header .author .right p {
+  padding: 8px 12px;
+  background-color: green;
+  color: white;
+  border-radius: 2rem;
+}
+
+.recent__posts__container .recent__posts__header .author .right p:hover {
+  background-color: #006600;
+}
+
+.recent__posts__container .recent_posts {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.recent__posts__container #recent-icon {
+  margin: 0 0.3rem 0 0;
+}
+/*# sourceMappingURL=posts.css.map */

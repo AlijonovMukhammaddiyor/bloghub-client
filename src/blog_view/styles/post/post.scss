@@ -1,0 +1,300 @@
+@import "../../../home_view/styles/components/variables.scss";
+
+.post__body {
+	padding: 4rem 0 0;
+
+	.post__body__container {
+		width: 46rem;
+		margin: auto;
+
+		.post__body__header {
+			.post__body__title {
+				font-size: 2.4rem;
+				color: #303030;
+				font-weight: 500;
+				margin-bottom: 1rem;
+			}
+
+			.post__body__subtitle {
+				color: gray;
+				font-size: 1.2rem;
+				margin-bottom: 2rem;
+				font-weight: lighter;
+			}
+
+			.post__body__tags {
+				justify-content: space-between;
+				@include flex__container;
+
+				.post__body__author__part {
+					@include flex__container;
+
+					.author__name {
+						text-decoration: none;
+						font-weight: lighter;
+						color: #48af8d;
+						margin: auto 0.5rem;
+						font-size: 1rem;
+					}
+
+					p {
+						color: gray;
+						font-size: 0.8rem;
+						margin: auto 0.3rem;
+					}
+
+					#bookmark {
+						margin-top: 0.5rem;
+					}
+				}
+
+				.post__header__share {
+					.social__icons {
+						width: 37px;
+						height: 37px;
+						margin: 0.2rem;
+						padding: 5px;
+						cursor: pointer;
+						@include transition_ease;
+						&:hover {
+							width: 33px;
+							height: 33px;
+						}
+					}
+
+					// .facebook {
+					// 	width: 27px;
+					// 	height: 27px;
+					// }
+
+					// .link {
+					// 	width: 25px;
+					// 	height: 25px;
+					// }
+				}
+			}
+		}
+
+		.post__body__body {
+			img {
+				height: auto;
+				width: 100%;
+				margin: 2rem auto;
+			}
+
+			div.temp {
+				display: none;
+				position: relative;
+			}
+
+			.visible_ {
+				visibility: visible;
+			}
+
+			.notVisible {
+				visibility: hidden;
+			}
+
+			.post__body__toolbox__inner {
+				width: 15rem;
+				position: absolute;
+				left: -17rem;
+
+				.post__body__toolbox__icons {
+					margin: 1.5rem 1.5rem 0;
+					cursor: pointer;
+					color: gray;
+				}
+
+				.post__body__toolbox__icons:hover {
+					color: black;
+				}
+
+				.like__comment__count {
+					margin: 0 1.7rem;
+					cursor: pointer;
+					color: gray;
+				}
+			}
+
+			.post__body__content {
+				font-size: 1.2rem;
+				line-height: 2rem;
+				font-weight: 300;
+				color: #303030;
+
+				ul {
+					margin-left: 1.2rem;
+				}
+
+				blockquote {
+					border-left: 2px solid gray;
+					padding-left: 0.5rem;
+				}
+			}
+
+			.post__body__categ__btn {
+				margin: 0 1rem 0 0;
+				padding: 10px 12px;
+				border: none;
+				border-radius: 5px;
+				color: gray;
+				cursor: pointer;
+				font-weight: light;
+
+				&:hover {
+					background-color: #dadada;
+				}
+			}
+
+			.post__body__final {
+				@include flex__container;
+				height: min-content;
+				margin-top: 2rem;
+
+				.final__share {
+					@include flex__container;
+					.social__icons {
+						width: 40px;
+						height: 40px;
+						cursor: pointer;
+						padding: 5px;
+						@include transition_ease;
+
+						&:hover {
+							width: 37px;
+							height: 37px;
+						}
+					}
+				}
+
+				.post__body__toolbox__icons {
+					margin-left: 0;
+				}
+			}
+
+			.post__body__final__profile {
+				@include flex__container;
+				margin-top: 0.5rem;
+
+				.profile__inner {
+					@include flex__container;
+
+					#final__profilePic {
+						width: 70px;
+						height: 70px;
+						border-radius: 50%;
+						margin-right: 1rem;
+					}
+
+					.final-profile-name,
+					.final-profile-bio,
+					.writtenBy {
+						margin: 0;
+						position: static;
+					}
+
+					.writtenBy,
+					.final-profile-bio {
+						color: gray;
+					}
+
+					a {
+						text-decoration: none;
+						color: #303030;
+					}
+				}
+
+				.extra {
+					@include flex__container;
+					.nav__follow__btn {
+						padding: 10px 15px;
+						background-color: hsl(203, 58%, 35%);
+						border: none;
+						color: white;
+						border-radius: 2rem;
+						margin-right: 1rem;
+						cursor: pointer;
+
+						&:hover {
+							background-color: hsl(203, 58%, 28%);
+						}
+					}
+
+					#email__icon {
+						width: 25px;
+						height: 20px;
+					}
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: 1300px) {
+	.postBody-toolbox-inner {
+		margin-left: 2rem;
+	}
+}
+
+@media (max-width: 1200px) {
+	.visible {
+		visibility: hidden;
+	}
+}
+
+@media (max-width: 768px) {
+	.postBody-container {
+		padding: 0 2rem;
+		max-width: 100%;
+	}
+
+	.fullPost-title {
+		font-size: 2rem;
+	}
+	.fullPost-subtitle {
+		font-size: 1rem;
+	}
+
+	.postBody-content {
+		font-size: 1rem;
+	}
+}
+
+@media (max-width: 700px) {
+	#final-profilePic {
+		width: 52px;
+		height: 52px;
+	}
+
+	.writtenBy {
+		font-size: 0.8rem;
+	}
+	.final-profile-name {
+		font-size: 1.1rem;
+	}
+
+	.final-profile-bio {
+		font-size: 0.8rem;
+	}
+
+	.onFinal {
+		font-size: 0.8rem;
+		padding: 5px 8px;
+	}
+
+	.finalProfile {
+		font-size: 0.8rem;
+	}
+}
+
+@media (max-width: 400px) {
+	.final-profile-bio {
+		position: absolute;
+		visibility: hidden;
+	}
+
+	.postBody-container {
+		padding: 0 1rem;
+	}
+}

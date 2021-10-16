@@ -1,0 +1,44 @@
+@import "../components/variables";
+
+.search__container {
+	@include flex__container($justify: flex-end);
+	position: sticky;
+	right: 0;
+	top: 4.25rem;
+	z-index: 5000;
+	width: 100%;
+
+	.search__form {
+		@include flex__container;
+		input {
+			height: 3rem;
+			width: 5px;
+			padding: 2rem;
+			font-size: 1.5rem;
+			outline: none;
+			border: none;
+			@include transition_ease(0.4s);
+		}
+
+		.searching {
+			width: 75rem;
+			padding: 2rem;
+			border-radius: 0px;
+			background-color: $primary-color;
+			@include transition_ease(0.4s);
+			border: 1px solid lightgray;
+		}
+
+		button {
+			padding: 20px;
+
+			background-color: black;
+			color: $primary-color;
+			cursor: pointer;
+		}
+
+		.search__icon {
+			font-size: 1.5rem;
+		}
+	}
+}

@@ -1,0 +1,88 @@
+@import "../components/variables.scss";
+
+// $search__width:
+
+@mixin breakpoint_1 {
+	@media (max-width: 800px) {
+		@content;
+	}
+}
+
+@mixin breakpoint_2 {
+	@media (max-width: 700px) {
+		@content;
+	}
+}
+
+.filtered__posts {
+	.search {
+		// @include flex__container($justify: flex-start);
+		margin: 2rem 7rem;
+		@include flex__container($justify: center, $align: flex-start);
+		@include breakpoint_1 {
+			margin: 2rem;
+		}
+		h2 {
+			font-size: 1.8rem;
+			display: inline-block;
+			margin: 1rem 0.5rem 0 0;
+			@include breakpoint_2 {
+				font-size: 1.2rem;
+			}
+		}
+		.search__term {
+			display: inline-block;
+			height: 3.1rem;
+			font-size: 2rem;
+			outline: none;
+			padding: 1rem 1rem 0 0;
+			width: 50.5rem;
+			border: none;
+			border-bottom: 1px solid gray;
+
+			&:focus {
+				background-color: white;
+			}
+
+			@include breakpoint_2 {
+				height: 2.5rem;
+				font-size: 1.2rem;
+			}
+		}
+
+		.search__icon {
+			height: 50px;
+			width: 50px;
+			color: white;
+			padding: 15px;
+			background-color: hsl(215, 50%, 23%);
+
+			@include breakpoint_2 {
+				height: 40px;
+				width: 40px;
+				padding: 10px;
+			}
+
+			&:hover {
+				background-color: hsl(215, 50%, 35%);
+			}
+		}
+	}
+	.result__title {
+		padding: 0 7rem;
+		margin: 3rem auto;
+		max-width: 74rem;
+
+		@include breakpoint_1 {
+			width: auto;
+			padding: 0 2rem;
+		}
+
+		h4 {
+			margin-bottom: 0.3rem;
+			.search__term {
+				font-weight: 300;
+			}
+		}
+	}
+}

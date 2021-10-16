@@ -1,0 +1,302 @@
+.navbar-container {
+  background-color: white;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.navbar-container .navbar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  margin: 2rem 8.5rem 0 8.5rem;
+}
+
+@media screen and (max-width: 1200px) {
+  .navbar-container .navbar {
+    margin: 2rem;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .navbar-container .navbar {
+    margin: 1rem 20px;
+  }
+}
+
+.navbar-container .navbar .brand_with_prompt {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.navbar-container .navbar .brand_with_prompt .brand__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.navbar-container .navbar .brand_with_prompt .logo {
+  margin-right: 0;
+  margin-bottom: 0.8rem;
+}
+
+@media screen and (max-width: 400px) {
+  .navbar-container .navbar .brand_with_prompt .logo {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+.navbar-container .navbar .brand_with_prompt .brandName {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  font-size: 2.5rem;
+  padding: 0;
+  margin: 0;
+  color: #303030;
+}
+
+@media screen and (max-width: 400px) {
+  .navbar-container .navbar .brand_with_prompt .brandName {
+    font-size: 2rem;
+  }
+}
+
+.navbar-container .navbar .brand_with_prompt .signup_prompt {
+  max-height: -webkit-min-content;
+  max-height: -moz-min-content;
+  max-height: min-content;
+  background-color: #0099ff;
+  width: 18rem;
+  text-align: center;
+  margin: 0 1rem;
+  border-radius: 0.5rem;
+  color: white;
+  font-size: 0.9rem;
+  padding: 0.7rem;
+  position: absolute;
+  top: 5.5rem;
+  left: 9.5rem;
+}
+
+@media screen and (max-width: 1200px) {
+  .navbar-container .navbar .brand_with_prompt .signup_prompt {
+    left: 2rem;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .navbar-container .navbar .brand_with_prompt .signup_prompt {
+    top: 4rem;
+    left: 1rem;
+    font-size: 0.75rem;
+    padding: 0.2rem;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .navbar-container .navbar .brand_with_prompt .signup_prompt {
+    font-size: 0.7rem;
+    padding: 10px;
+    width: auto;
+  }
+}
+
+.navbar-container .navbar .brand_with_prompt .signup_prompt::after {
+  content: "";
+  position: absolute;
+  top: -10%;
+  width: 10px;
+  height: 10px;
+  border-color: transparent #0099ff #0099ff transparent;
+  border-width: 1px;
+  border-style: solid;
+  background: #0099ff;
+  right: 90%;
+  margin-right: -5px;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.navbar-container .navbar .brand_with_prompt .signup_prompt a {
+  color: #69ee69;
+  font-size: 1.02rem;
+}
+
+.navbar-container .navbar .brand_with_prompt .signup_prompt a:hover {
+  text-decoration: underline;
+}
+
+.navbar-container .navbar .post__nav__items {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.navbar-container .navbar .post__nav__items a {
+  color: #333ee1;
+  padding: 20px 20px;
+  margin: auto 2rem;
+}
+
+.navbar-container .navbar .post__nav__items a:hover {
+  color: #7179ea;
+}
+
+.navbar-container .navbar .post__nav__items .bold {
+  background-color: #ededf7;
+}
+
+.navbar-container .navbar .post__nav__items .dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+.navbar-container .navbar .post__nav__items .dropdown .dropbtn {
+  color: #333ee1;
+  font-size: 1.2rem;
+  border: none;
+  outline: none;
+  padding: 20px 18px;
+  background-color: #f6f6fb;
+  font-family: "Ubuntu";
+  font-weight: 500;
+  margin: 0;
+}
+
+.navbar-container .navbar .post__nav__items .dropdown .dropbtn:hover {
+  background-color: #ededf7;
+}
+
+.navbar-container .navbar .post__nav__items .dropdown .dropbtn #down__icon {
+  margin: 0 0 0 0.5rem;
+}
+
+.navbar-container .navbar .post__nav__items .dropdown .dropdown__content {
+  display: none;
+  position: absolute;
+  background-color: #ffff;
+  min-width: 160px;
+  -webkit-box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.navbar-container .navbar .post__nav__items .dropdown .dropdown__content a {
+  float: none;
+  font-weight: 300;
+  color: #303030;
+  font-size: 1rem;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.navbar-container .navbar .post__nav__items .dropdown .dropdown__content a:hover {
+  background-color: #ddd;
+}
+
+.navbar-container .navbar .post__nav__items .dropdown:hover .dropdown__content {
+  display: block;
+}
+
+.navbar-container .navbar .nav-item {
+  padding: 12px 20px;
+  font-size: 1rem;
+  color: #008ae6;
+  font-family: "Open Sans", sans-serif;
+  border: 1px solid #008ae6;
+  border-radius: 2rem;
+  background-color: #ffff;
+  position: relative;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+@media screen and (max-width: 400px) {
+  .navbar-container .navbar .nav-item {
+    font-size: 0.8rem;
+    padding: 7px 12px;
+  }
+}
+
+.navbar-container .navbar .scroll-nav-item {
+  color: #008ae6;
+}
+
+.navbar-container .navbar .scroll-nav-item:hover {
+  border-radius: 2rem;
+}
+
+.active__scroll {
+  background-color: #fff;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10000;
+  -webkit-box-shadow: 0 0 3px #cccccc;
+          box-shadow: 0 0 3px #cccccc;
+}
+
+.active__scroll .navbar {
+  padding-top: 5px;
+}
+/*# sourceMappingURL=home_navbar.css.map */

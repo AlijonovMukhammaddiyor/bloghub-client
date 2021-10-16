@@ -1,0 +1,38 @@
+.main__container {
+  margin: auto;
+  width: 75rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: none;
+      -ms-flex-align: none;
+          align-items: none;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+  gap: 1rem;
+}
+
+@media (max-width: 1200px) {
+  .main__container {
+    width: 95%;
+  }
+}
+
+@media (max-width: 975px) {
+  .main__container {
+    display: block;
+  }
+}
+
+@media (max-width: 900px) {
+  .main__container {
+    display: block;
+    padding: 0;
+  }
+}
+/*# sourceMappingURL=main.css.map */

@@ -1,0 +1,346 @@
+@import "../../../home_view/styles/components/variables.scss";
+
+@mixin break_lg {
+	@media (max-width: 900px) {
+		@content;
+	}
+}
+
+@mixin break_md {
+	@media (max-width: 768px) {
+		@content;
+	}
+}
+
+.editor__container {
+	margin: auto;
+	width: 50rem;
+	background-color: hsl(0, 0%, 100%);
+
+	@include break_lg {
+		width: 100%;
+	}
+}
+
+.write__navbar {
+	box-shadow: 0 0 5px lightgray;
+	padding: 1rem 5rem;
+	@include flex__container;
+	gap: 0.5rem;
+	background-color: #96c3ce;
+
+	.to__back {
+		@include flex__container;
+		gap: 0.3rem;
+		.back__icon {
+			margin-bottom: 0.5rem;
+			cursor: pointer;
+		}
+		h4 {
+			cursor: pointer;
+		}
+	}
+	img {
+		width: 40px;
+		height: 40px;
+		border-radius: 50%;
+	}
+}
+
+.write__container {
+	@include flex__container($direction: column);
+	// gap: 1rem;
+
+	@include break_lg {
+		padding: 0 3rem;
+	}
+
+	.write__title {
+		width: 48rem;
+		margin-top: 3rem;
+		padding: 0.3rem 1rem;
+		outline: none;
+		line-height: 2.5rem;
+		font-size: 2.1rem;
+		border-bottom: 1px solid gray;
+		border-radius: 0 0 10px 10px;
+		cursor: pointer;
+
+		@include break_lg {
+			width: 100%;
+		}
+
+		@include break_md {
+			font-size: 1.8rem;
+		}
+	}
+
+	.write__title[contentEditable="true"]:empty:before {
+		content: attr(data-ph);
+		color: lightgray;
+	}
+
+	.write__excerpt {
+		width: 48rem;
+		padding: 0.5rem 1rem;
+		outline: none;
+		border-bottom: 1px solid gray;
+		border-radius: 0 0 10px 10px;
+		font-size: 1.2rem;
+		color: gray;
+		margin-top: 2rem;
+		// line-height: 1.rem;
+		margin-bottom: 2rem;
+		cursor: pointer;
+
+		@include break_lg {
+			width: 100%;
+		}
+
+		@include break_md {
+			font-size: 1rem;
+		}
+	}
+
+	.write__excerpt[contentEditable="true"]:empty:before {
+		content: attr(data-ph);
+		color: lightgray;
+	}
+	.write__image {
+		text-align: center;
+		width: 48rem;
+		// border-left: 2px solid gray;
+		min-height: 2rem;
+		margin: 2rem auto 4rem;
+		@include break_lg {
+			width: 100%;
+		}
+
+		img {
+			width: 46rem;
+			height: auto;
+			object-fit: cover;
+			max-height: 40rem;
+		}
+
+		.label {
+			align-items: center;
+			justify-content: center;
+			display: flex;
+			gap: 0.5rem;
+			color: gray;
+		}
+	}
+
+	.upload {
+		cursor: pointer;
+		font-size: 2rem;
+		color: gray;
+
+		&:hover {
+			color: black;
+		}
+	}
+
+	#upload__image {
+		display: none;
+	}
+	.form__buttons {
+		width: 50rem;
+		@include break_lg {
+			width: 100%;
+		}
+		@include flex__container;
+
+		button {
+			border: none;
+			padding: 10px 15px;
+			display: inline-block;
+			font-size: medium;
+			margin-top: 2rem;
+			background-color: #fff;
+			background-color: hsl(174, 52%, 44%);
+			color: #fff;
+			border-radius: 5px;
+
+			&:hover {
+				background-color: hsl(174, 52%, 34%);
+			}
+		}
+	}
+
+	.cat__buttons {
+		@include flex__container($justify: flex-start);
+		width: 50rem;
+		gap: 1rem;
+
+		@include break_lg {
+			width: 100%;
+		}
+		p {
+			padding: 10px 15px;
+			border: none;
+			background-color: hsl(0, 0%, 90%);
+		}
+	}
+
+	.second {
+		max-height: 3rem;
+		// margin-top: 4rem;
+	}
+
+	.select__con {
+		max-height: min-content;
+		// display: flex;
+		place-content: left;
+		width: 50rem;
+		// grid-gap: 0.5rem;
+		font-family: "Baloo 2", sans-serif;
+		text-align: left;
+		padding: 1rem 0;
+		@include break_lg {
+			width: 100%;
+		}
+
+		select {
+			// A reset of styles, including removing the default dropdown arrow
+			appearance: none;
+			background-color: transparent;
+			border: none;
+			padding: 0 1em 0 0;
+			margin: 0;
+			width: 100%;
+			font-family: inherit;
+			font-size: inherit;
+			cursor: inherit;
+			line-height: inherit;
+
+			// Stack above custom arrow
+			z-index: 1;
+
+			// Remove dropdown arrow in IE10 & IE11
+			// @link https://www.filamentgroup.com/lab/select-css.html
+			&::-ms-expand {
+				display: none;
+			}
+
+			// Remove focus outline, will add on alternate element
+			outline: none;
+		}
+
+		.select {
+			display: grid;
+			grid-template-areas: "select";
+			align-items: center;
+			position: relative;
+
+			select,
+			&::after {
+				grid-area: select;
+			}
+
+			min-width: 15ch;
+			max-width: 30ch;
+
+			border: 1px solid #777;
+			border-radius: 0.25em;
+			padding: 0.25em 0.5em;
+
+			font-size: 1rem;
+			cursor: pointer;
+			line-height: 1.1;
+
+			// Optional styles
+			// remove for transparency
+			background-color: #fff;
+			background-image: linear-gradient(to top, #f9f9f9, #fff 33%);
+
+			// Custom arrow
+			&:not(.select--multiple)::after {
+				content: "";
+				justify-self: end;
+				width: 0.8em;
+				height: 0.5em;
+				background-color: rgb(119, 119, 119);
+				clip-path: polygon(100% 0%, 0 0%, 50% 100%);
+			}
+		}
+
+		// Interim solution until :focus-within has better support
+		select:focus + .focus {
+			position: absolute;
+			top: -1px;
+			left: -1px;
+			right: -1px;
+			bottom: -1px;
+			border: 2px solid blue;
+			border-radius: inherit;
+		}
+		label {
+			font-size: 1rem;
+			font-weight: 400;
+			margin-bottom: 0.5rem;
+		}
+
+		.select + label {
+			margin-top: 2rem;
+		}
+	}
+}
+.footer {
+	padding: 0 5rem;
+	@include flex__container;
+	margin-top: 2rem;
+	width: 100%;
+	height: 5rem;
+	background-color: black;
+
+	h1 {
+		color: #fff;
+		cursor: pointer;
+	}
+
+	.footer__links {
+		@include flex__container;
+		gap: 2rem;
+	}
+
+	p {
+		color: white;
+		cursor: pointer;
+
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+}
+// .ck-editor[role="application"] .ck.ck-content {
+// 	width: 80rem;
+// }
+.ck.ck-editor__editable {
+	border: 1px solid hsl(0, 0%, 70%);
+	background: #fff;
+	outline: none;
+	padding: 0 1rem;
+	width: 100%;
+}
+
+.ck-focused {
+	outline: none;
+}
+
+.ck.ck-editor__editable[role="textbox"] {
+	font-size: 1.2rem;
+	line-height: 1.8rem;
+	min-height: 20rem;
+	padding: 0 2rem;
+	width: 100%;
+
+	@include break_lg {
+		width: 100%;
+	}
+
+	@include break_md {
+		font-size: 1rem;
+	}
+}
