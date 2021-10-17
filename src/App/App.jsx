@@ -7,8 +7,8 @@ import Write from "../blog_view/write/write";
 import Profile from "../blog_view/profile/profile";
 
 import ProfileEdit from "../blog_view/profile/edit/profileEdit";
-import Login from "../home_view/login/login";
-import Register from "../home_view/register/register";
+// import Login from "../home_view/login/login";
+// import Register from "../home_view/register/register";
 import Input from "../home_view/register/input";
 import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-dom";
 import Filter from "../home_view/Filter/Filter";
@@ -29,15 +29,12 @@ export default function App() {
 					<MainHome user={user} />
 				</Route>
 				<Route exact path="/signin">
-					{user ? <Redirect to="/bloghub" /> : <Login />}
+					{user ? <Redirect to="/bloghub" /> : <LoginInput />}
 				</Route>
-				<Route path="/signin/username">{user ? <Redirect to="/bloghub" /> : <LoginInput />}</Route>
 				<Route exact path="/register">
-					{user ? <Redirect to="/bloghub" /> : <Register />}
-				</Route>
-				<Route exact path="/register/username">
 					{user ? <Redirect to="/bloghub" /> : <Input />}
 				</Route>
+
 				<Route exact path="/post/tag">
 					<Catposts />
 				</Route>

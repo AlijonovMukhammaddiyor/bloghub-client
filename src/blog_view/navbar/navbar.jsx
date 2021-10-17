@@ -13,13 +13,16 @@ export default function Navbar(props) {
 	const PF = "https://bloghub-1.herokuapp.com/images/";
 
 	useEffect(() => {
+		let ismounted = true;
 		const getCats = async () => {
 			let catss = await axios.get("https://bloghub-1.herokuapp.com/api/categories");
-			if (catss.data.length > 0) setCats(Array.from(catss.data).slice(0, 4));
+			if (catss.data.length > 0) if (ismounted) setCats(Array.from(catss.data).slice(0, 4));
 		};
-		if (true) {
+		if (ismounted) {
 			getCats();
 		}
+
+		return () => (ismounted = false);
 	}, [cats]);
 
 	useEffect(() => {
@@ -48,7 +51,7 @@ export default function Navbar(props) {
 							{cats.map((cat, index) => {
 								return (
 									<Link key={index} to={`/post/tag?cat=${cat.name}`}>
-										<p key={100} className="cat" key={index}>
+										<p key={100} className="cat">
 											{cat.name.toUpperCase()}
 										</p>
 									</Link>

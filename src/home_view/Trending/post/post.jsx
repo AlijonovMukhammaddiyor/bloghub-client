@@ -11,7 +11,6 @@ import axios from "axios";
 
 export default function Post(props) {
 	const [clap, setClap] = useState(false);
-	const [success, setSuccess] = useState(false);
 	const [saved, setSaved] = useState(false);
 	const [author, setAuthor] = useState({});
 	const [again, setAgain] = useState(false);
@@ -54,7 +53,6 @@ export default function Post(props) {
 				`https://bloghub-1.herokuapp.com/api/user/${user._id}`,
 				updatedUser
 			);
-			setSuccess(true);
 			dispatch({ type: "UPDATE_SUCCESS", payload: res.data });
 		} catch (err) {
 			dispatch({ type: "UPDATE_FAILURE" });
@@ -77,7 +75,6 @@ export default function Post(props) {
 				`https://bloghub-1.herokuapp.com/api/user/${user._id}`,
 				updatedUser
 			);
-			setSuccess(true);
 			dispatch({ type: "UPDATE_SUCCESS", payload: res.data });
 		} catch (err) {
 			dispatch({ type: "UPDATE_FAILURE" });
@@ -106,7 +103,6 @@ export default function Post(props) {
 				`https://bloghub-1.herokuapp.com/api/user/${user._id}`,
 				updatedUser
 			);
-			setSuccess(true);
 			dispatch({ type: "UPDATE_SUCCESS", payload: res.data });
 		} catch (err) {
 			dispatch({ type: "UPDATE_FAILURE" });
@@ -135,7 +131,6 @@ export default function Post(props) {
 				`https://bloghub-1.herokuapp.com/api/user/${user._id}`,
 				updatedUser
 			);
-			setSuccess(true);
 			dispatch({ type: "UPDATE_SUCCESS", payload: res.data });
 		} catch (err) {
 			dispatch({ type: "UPDATE_FAILURE" });

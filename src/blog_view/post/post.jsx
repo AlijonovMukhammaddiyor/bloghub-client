@@ -12,7 +12,7 @@ import reactRenderHtml from "react-render-html";
 import { Link } from "react-router-dom";
 
 export default function PostBody() {
-	const [show, setShow] = useState(false);
+	// const [show, setShow] = useState(false);
 	const [post, setPost] = useState({});
 	const [author, setAuthor] = useState({});
 
@@ -22,46 +22,54 @@ export default function PostBody() {
 	const PF = "https://bloghub-1.herokuapp.com/images/";
 
 	useEffect(() => {
+		let ismounted = true;
 		const getPost = async () => {
 			const res = await axios.get("https://bloghub-1.herokuapp.com/api/posts/" + id);
 			if (res.data) {
-				setPost(res.data);
+				if (ismounted) setPost(res.data);
 			}
 		};
-		getPost();
+		if (ismounted) getPost();
+		return () => {
+			ismounted = false;
+		};
 	}, [post, id]);
 
 	useEffect(() => {
+		let ismounted = true;
 		async function getUser() {
 			if (post.title) {
 				try {
 					const user = await axios.get(
 						`https://bloghub-1.herokuapp.com/api/user/` + post.author.id
 					);
-					if (user.data) setAuthor(user.data);
+					if (user.data) if (ismounted) setAuthor(user.data);
 				} catch (err) {
 					console.log(err.response.data);
 				}
 			}
 		}
-		getUser();
+		if (ismounted) getUser();
+		return () => (ismounted = false);
 	});
 
-	useEffect(() => {
-		document.addEventListener("scroll", handleScroll);
-		return () => window.removeEventListener("scroll", handleScroll);
-	}, []);
+	// useEffect(() => {
+	// 	document.addEventListener("scroll", handleScroll);
+	// 	return () => window.removeEventListener("scroll", handleScroll);
+	// }, []);
 
-	const handleScroll = (height) => {
-		const targetPoint = document.getElementsByClassName("post__body__final__profile");
-		try {
-			const value = targetPoint[0].getBoundingClientRect().top;
-			setShow(window.pageYOffset > 900 && value > 700);
-			targetPoint[0].marginTop = window.pageYOffset + 80;
-		} catch (e) {
-			setShow(false);
-		}
-	};
+	// const handleScroll = (height) => {
+	// 	let ismounted = true;
+	// 	const targetPoint = document.getElementsByClassName("post__body__final__profile");
+	// 	try {
+	// 		const value = targetPoint[0].getBoundingClientRect().top;
+	// 		setShow(window.pageYOffset > 900 && value > 700);
+	// 		targetPoint[0].marginTop = window.pageYOffset + 80;
+	// 	} catch (e) {
+	// 		if (ismounted) setShow(false);
+	// 	}
+	// 	return () => (ismounted = false);
+	// };
 
 	return (
 		<div className="post__body" style={{ minHeight: "100vh" }}>
@@ -102,7 +110,7 @@ export default function PostBody() {
 					</div>
 					<div className="post__body__body">
 						<img src={PF + post.Img} alt="" />
-						<div className={show ? "visible" : "notVisible"}>
+						<div className={false ? "visible" : "notVisible"}>
 							<div className="post__body__toolbox__inner">
 								<Author
 									author={author}

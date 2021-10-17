@@ -2,17 +2,22 @@ import React, { useState, useEffect } from "react";
 import "../../styles/main/sidebar/sidebar.css";
 import axios from "axios";
 import { Link } from "react-router-dom";
+// import { useIsMounted } from "../../mount/isMounted";
 
 export default function Sidebar() {
 	const [cats, setCats] = useState([]);
 	const [seeAll, setSeeAll] = useState(false);
 
 	useEffect(() => {
+		let ismounted = true;
 		const getCats = async () => {
 			let catss = await axios.get("https://bloghub-1.herokuapp.com/api/categories");
-			if (catss.data.length > 0) setCats(Array.from(catss.data));
+			if (catss.data.length > 0) if (ismounted) setCats(Array.from(catss.data));
 		};
-		if (true) getCats();
+		if (ismounted) getCats();
+		return () => {
+			ismounted = false;
+		};
 	}, [cats]);
 
 	function seeAllTopics() {
