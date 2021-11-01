@@ -102,7 +102,6 @@ function Write(props) {
 				id: props.user._id,
 			},
 		};
-		console.log(newPost);
 		if (file) {
 			const data = new FormData();
 			const filename = Date.now() + file.name;

@@ -30,6 +30,14 @@ export default function Navbar(props) {
 		return () => window.removeEventListener("scroll", handleScroll);
 	}, []);
 
+	useEffect(() => {
+		window.addEventListener("click", (e) => {
+			if (profileHoverbox) {
+				if (e.target.className !== "profile__hoverbox") setHoverbox(false);
+			}
+		});
+	});
+
 	const handleScroll = () => {
 		let yOffset = window.pageYOffset;
 		return yOffset;

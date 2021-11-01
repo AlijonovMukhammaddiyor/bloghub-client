@@ -42,7 +42,6 @@ export default function Main(props) {
 					);
 					res.push(post.data);
 				}
-				console.log(res);
 				setPosts(res);
 			} else {
 				if (isTag) {

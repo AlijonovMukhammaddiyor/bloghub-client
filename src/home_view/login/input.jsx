@@ -20,15 +20,12 @@ export default function Input() {
 				username: userRef.current.value,
 				password: passwordRef.current.value,
 			});
-			console.log(res.data);
 			dispatch({ type: "LOGIN_SUCCESS", payload: res.data });
 		} catch (err) {
 			setError(true);
 			dispatch({ type: "LOGIN_FAILURE" });
 		}
 	};
-
-	console.log(user);
 
 	function myFunction(e) {
 		var x = document.getElementById("pass");
@@ -50,16 +47,16 @@ export default function Input() {
 					onChange={(e) => {}}
 					checked
 				/>
-				<label for="tab-1" className="tab" style={{ color: "black" }}>
+				<label htmlFor="tab-1" className="tab" style={{ color: "black" }}>
 					Sign In
 				</label>
 				<input id="tab-2" type="radio" name="tab" className="sign-up" />
-				<label for="tab-2" className="tab"></label>
+				<label htmlFor="tab-2" className="tab"></label>
 				<div className="login-form">
 					<div className="sign-in-htm">
 						<div className="group">
 							<label
-								for="user"
+								htmlFor="user"
 								className="label"
 								style={{ marginBottom: "0.5rem", color: "black" }}
 							>
@@ -69,7 +66,7 @@ export default function Input() {
 						</div>
 						<div className="group">
 							<label
-								for="pass"
+								htmlFor="pass"
 								className="label"
 								style={{ marginBottom: "0.5rem", color: "black" }}
 							>

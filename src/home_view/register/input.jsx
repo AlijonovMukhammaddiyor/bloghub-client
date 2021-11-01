@@ -13,7 +13,6 @@ export default function Input() {
 		e.preventDefault();
 		setError(false);
 		try {
-			console.log("hi 1");
 			const res = await axios.post("https://bloghub-1.herokuapp.com/api/auth/user/register", {
 				username,
 				email,

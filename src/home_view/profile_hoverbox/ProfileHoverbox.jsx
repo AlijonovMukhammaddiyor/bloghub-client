@@ -8,6 +8,7 @@ const Profilehoverbox = (props) => {
 	const handleLogout = () => {
 		dispatch({ type: "LOGOUT" });
 	};
+
 	return (
 		<div className="profile__hoverbox">
 			<Link to={`/account?user=${props.user._id}`}>
@@ -22,7 +23,7 @@ const Profilehoverbox = (props) => {
 				<p className="edit__profile">Write</p>
 			</Link>
 			<Link to={`/post/tag?user=${user._id}`}>
-				<p>Posts</p>
+				<p className="my__posts">Posts</p>
 			</Link>
 			<hr id="hr" />
 			<Link to="/">
