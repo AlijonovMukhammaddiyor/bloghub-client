@@ -21,7 +21,7 @@ const Navbar = (props) => {
 		<div className="main__navbar">
 			<div className="my__navbar">
 				<div className="nav__header">
-					<Link to="/bloghub">
+					<Link to="/">
 						<img
 							src={logo}
 							alt=""
@@ -49,7 +49,7 @@ const Navbar = (props) => {
 						</p>
 					</Link>
 
-					<a className="nav__link" href="/bloghub">
+					<a className="nav__link" href="/">
 						Home
 					</a>
 					<Link to={`/post/tag?user=${props.user._id}`}>

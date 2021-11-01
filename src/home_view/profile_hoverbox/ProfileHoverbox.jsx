@@ -25,7 +25,7 @@ const Profilehoverbox = (props) => {
 				<p>Posts</p>
 			</Link>
 			<hr id="hr" />
-			<Link to="/bloghub">
+			<Link to="/">
 				<p id="sign__out" onClick={handleLogout}>
 					Sign Out
 				</p>

@@ -39,8 +39,8 @@ export default function Navbar(props) {
 		<div className="blog__navbar__container">
 			<nav className="blog__navbar">
 				<div className="brand_with_prompt">
-					<Link to="/bloghub">
-						<p className="brand__container" href="/bloghub">
+					<Link to="/">
+						<p className="brand__container" href="/">
 							<img src={imgUrlBloghub} alt="" className="logo_b" />
 						</p>
 					</Link>

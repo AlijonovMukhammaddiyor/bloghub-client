@@ -1,12 +1,14 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import "../../styles/main/sidebar/sidebar.css";
 import axios from "axios";
 import { Link } from "react-router-dom";
-// import { useIsMounted } from "../../mount/isMounted";
+import { Context } from "../../../context/Context";
 
 export default function Sidebar() {
 	const [cats, setCats] = useState([]);
 	const [seeAll, setSeeAll] = useState(false);
+
+	const { user } = useContext(Context);
 
 	useEffect(() => {
 		let ismounted = true;
@@ -77,7 +79,9 @@ export default function Sidebar() {
 				<h2>Join millions of thers</h2>
 				<p>Share your thoughts</p>
 				<p>Grow your audience</p>
-				<a href="/register">Start Writing</a>
+				<Link to={user ? "/new-blog" : "/signin"}>
+					<p className="start_writing">Start Writing</p>
+				</Link>
 			</div>
 		</div>
 	);

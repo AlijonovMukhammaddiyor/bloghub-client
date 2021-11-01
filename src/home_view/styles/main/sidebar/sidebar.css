@@ -180,7 +180,7 @@
   font-size: 1.1rem;
 }
 
-.sidebar__container .sidebar__promotion a {
+.sidebar__container .sidebar__promotion .start_writing {
   border: none;
   color: black;
   background-color: #caebf7;
@@ -195,7 +195,7 @@
   transition: all 0.2s ease-in-out;
 }
 
-.sidebar__container .sidebar__promotion a:hover {
+.sidebar__container .sidebar__promotion .start_writing:hover {
   background-color: #98e1e3;
 }
 

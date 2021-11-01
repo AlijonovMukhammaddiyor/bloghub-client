@@ -288,6 +288,7 @@
 
 .post__filter .post__filter__title .post__title {
   width: 46rem;
+  color: #333333;
 }
 
 @media (max-width: 950px) {

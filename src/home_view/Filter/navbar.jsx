@@ -31,7 +31,7 @@ const Navbar = (props) => {
 					<img src={logo} alt="" className="b__logo" style={{ borderRadius: "0", width: "40px" }} />
 				</div>
 				<div className="nav__links">
-					<a href="/bloghub" className="nav__link">
+					<a href="/" className="nav__link">
 						Home
 					</a>
 					<Link to={props.user ? `/saved` : `/signin`}>

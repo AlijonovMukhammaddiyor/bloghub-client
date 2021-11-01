@@ -155,7 +155,7 @@ export default function Post(props) {
 
 	useEffect(() => {
 		const updateLiked = async () => {
-			if (again) {
+			if (again && user) {
 				setAgain(false);
 				if (clap) await handleSubmitLiked();
 				else await handleSubmitUnLike();
@@ -223,7 +223,7 @@ export default function Post(props) {
 					</Link>
 					<div className="recent__post__subtitle">
 						<Link to={`/post/${props.post._id}`}>
-							<p className="post__subtitle">{props.post.subtitle}</p>
+							<div className="post__subtitle">{props.post.subtitle}</div>
 						</Link>
 					</div>
 				</div>

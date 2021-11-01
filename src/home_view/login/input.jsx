@@ -101,7 +101,7 @@ export default function Input() {
 							<a href="#forgot" style={{ color: "black", marginRight: "1rem" }}>
 								Do not have an account?
 							</a>
-							<Link to="/register/username">
+							<Link to="/register">
 								<span
 									style={{
 										color: "green",

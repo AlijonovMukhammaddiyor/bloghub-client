@@ -25,14 +25,14 @@ export default function App() {
 	return (
 		<Router>
 			<Switch>
-				<Route exact path="/bloghub">
+				<Route exact path="/">
 					<MainHome user={user} />
 				</Route>
 				<Route exact path="/signin">
-					{user ? <Redirect to="/bloghub" /> : <LoginInput />}
+					{user ? <Redirect to="/" /> : <LoginInput />}
 				</Route>
 				<Route exact path="/register">
-					{user ? <Redirect to="/bloghub" /> : <Input />}
+					{user ? <Redirect to="/" /> : <Input />}
 				</Route>
 
 				<Route exact path="/post/tag">

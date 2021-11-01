@@ -207,6 +207,7 @@ $container_width_2: 46rem;
 
 		.post__title {
 			width: $img_width;
+			color: #333333;
 
 			@include break_1 {
 				width: 100%;

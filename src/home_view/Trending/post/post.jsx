@@ -141,7 +141,7 @@ export default function Post(props) {
 
 	useEffect(() => {
 		const updateLiked = async () => {
-			if (again) {
+			if (again && user) {
 				setAgain(false);
 				if (clap) await handleSubmitLiked();
 				else await handleSubmitUnLike();

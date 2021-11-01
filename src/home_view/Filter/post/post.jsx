@@ -15,7 +15,7 @@ export default function Post(props) {
 	const [style, setStyle] = useState({});
 	const [clap, setClap] = useState(false);
 	const [options, setOptions] = useState(false);
-	const [author, setAuthor] = useState(null);
+	const [author, setAuthor] = useState({});
 	const [saved, setSaved] = useState(false);
 	const [again, setAgain] = useState(false);
 
@@ -33,10 +33,12 @@ export default function Post(props) {
 			}
 		}
 		async function getUser() {
-			const user = await axios.get(
-				`https://bloghub-1.herokuapp.com/api/user/` + props.post.author.id
-			);
-			if (user.data.length > 0) setAuthor(user.data);
+			if (!author.username) {
+				const user = await axios.get(
+					`https://bloghub-1.herokuapp.com/api/user/${props.post.author.id}`
+				);
+				if (user.data) setAuthor(user.data);
+			}
 		}
 		getUser();
 	}, [setClap, author, user, props.post]);
@@ -159,7 +161,7 @@ export default function Post(props) {
 
 	useEffect(() => {
 		const updateLiked = async () => {
-			if (again) {
+			if (again && user) {
 				setAgain(false);
 				if (clap) await handleSubmitLiked();
 				else await handleSubmitUnLike();
@@ -191,7 +193,7 @@ export default function Post(props) {
 
 	return (
 		<div ref={ref} className="post__filter">
-			{author && (
+			{author.username && (
 				<>
 					<div className="post__filter__body">
 						<div className="post__filter__author">
@@ -238,8 +240,12 @@ export default function Post(props) {
 						</Link>
 					</div>
 					<div className="post__filter__title">
-						<h1 className="post__title">{props.post.title}</h1>
-						<p className="read__more">Read more...</p>
+						<Link to={`/post/${props.post._id}`}>
+							<h1 className="post__title">{props.post.title}</h1>
+						</Link>
+						<Link to={`/post/${props.post._id}`}>
+							<p className="read__more">Read more...</p>
+						</Link>
 					</div>
 					<div className="post__filter__footer">
 						<div className="claps">

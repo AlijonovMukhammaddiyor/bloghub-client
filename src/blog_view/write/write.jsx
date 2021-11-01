@@ -75,7 +75,7 @@ function Write(props) {
 	const [excerpt, setExcerpt] = useState("");
 	const [content, setContent] = useState("");
 	const [file, setFile] = useState(null);
-	const [cats, setCats] = useState([]);
+	const [cats, setCats] = useState(["old"]);
 	const [categs, setCategs] = useState([]);
 	const [length, setLength] = useState(0);
 
@@ -83,7 +83,7 @@ function Write(props) {
 
 	useEffect(() => {
 		const getCats = async () => {
-			let catss = await axios.get("http://localhost:4000/api/categories");
+			let catss = await axios.get("https://bloghub-1.herokuapp.com/api/categories");
 			setCats(Array.from(catss.data));
 		};
 		getCats();
@@ -110,11 +110,11 @@ function Write(props) {
 			data.append("file", file);
 			newPost.Img = filename;
 			try {
-				await axios.post("http://localhost:4000/api/upload", data);
+				await axios.post("https://bloghub-1.herokuapp.com/api/upload", data);
 			} catch (err) {}
 		}
 		try {
-			const res = await axios.post("http://localhost:4000/api/posts", newPost);
+			const res = await axios.post("https://bloghub-1.herokuapp.com/api/posts", newPost);
 			window.location.replace("/post/" + res.data._id);
 		} catch (err) {
 			console.log(err.response.data);
@@ -248,7 +248,7 @@ function Write(props) {
 			</form>
 
 			<div className="footer">
-				<Link to="/bloghub">
+				<Link to="/">
 					<h1 id="blogHub">BlogHub</h1>
 				</Link>
 				<div className="footer__links">

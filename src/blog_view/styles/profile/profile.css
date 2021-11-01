@@ -137,7 +137,6 @@
 
 .profile__container .recent__posts .posts {
   border: 1px solid gray;
-  height: 100vh;
 }
 
 @media (max-width: 400px) {

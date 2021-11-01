@@ -19,7 +19,7 @@ export default function Navbar(props) {
 		<div className={show ? "navbar-container active__scroll" : "navbar-container"}>
 			<nav className="navbar">
 				<div className="brand_with_prompt">
-					<a className="brand__container" href="/bloghub">
+					<a className="brand__container" href="/">
 						<img src={imgUrlBloghub} alt="" className="logo bloghub" />
 						<h1 className="brandName" id="blogHub">
 							logHub
