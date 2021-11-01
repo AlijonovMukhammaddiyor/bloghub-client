@@ -85,7 +85,7 @@
 
 @media (max-width: 800px) {
   .main__navbar .my__navbar .nav__links .hoverbox {
-    right: 2rem;
+    right: 5.5rem;
   }
 }
 
@@ -148,15 +148,34 @@
 
 .main__navbar .responsive__section {
   position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  flex-direction: column;
+  gap: 3rem;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 5rem 1rem 3rem;
+  height: 100vh;
+  width: 100vw;
+  -webkit-transform: scale(0);
+          transform: scale(0);
   width: 100%;
-  top: -100%;
-  right: 0;
-  height: -webkit-min-content;
-  height: -moz-min-content;
-  height: min-content;
-  z-index: 1;
-  padding: 1rem;
-  background-color: #fff;
+  z-index: 11000;
+  background-color: white;
+  -webkit-transform-origin: 50% 50%;
+          transform-origin: 50% 50%;
   -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
 }
@@ -177,27 +196,31 @@
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    -webkit-box-pack: start;
-        -ms-flex-pack: start;
-            justify-content: flex-start;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    gap: 2rem;
     text-align: center;
-  }
-}
-
-@media (max-width: 450px) {
-  .main__navbar .responsive__section {
-    width: 100%;
   }
 }
 
 @media (max-width: 800px) {
   .main__navbar .open {
-    top: 3.71rem;
+    position: fixed;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    padding: 10rem;
+    -webkit-transform-origin: 50% 50%;
+            transform-origin: 50% 50%;
+    background-color: white;
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
   }
 }
 /*# sourceMappingURL=styles.css.map */

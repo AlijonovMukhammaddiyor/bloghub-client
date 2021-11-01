@@ -41,7 +41,6 @@ const Navbar = (props) => {
 						<p className="nav__link">Favourites</p>
 					</Link>
 
-					<FontAwesomeIcon icon={handleBurger()} className="burger" onClick={handleClick} />
 					{props.user ? (
 						<div>
 							<img
@@ -63,6 +62,7 @@ const Navbar = (props) => {
 							</span>
 						</Link>
 					)}
+					<FontAwesomeIcon icon={handleBurger()} className="burger" onClick={handleClick} />
 				</div>
 			</div>
 			<div className={burger ? "responsive__section" : "responsive__section open"}>
@@ -70,8 +70,6 @@ const Navbar = (props) => {
 				<a href="/">Home</a>
 				<a href="/saved">Saved Posts</a>
 				<a href="/liked">Favourites</a>
-
-				<img src="" alt="" className="account__icon" />
 			</div>
 		</div>
 	);
