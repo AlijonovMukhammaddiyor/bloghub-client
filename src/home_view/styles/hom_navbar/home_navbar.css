@@ -132,8 +132,10 @@
   .navbar-container .navbar .brand_with_prompt .signup_prompt {
     top: 4rem;
     left: 1rem;
+    text-align: left;
     font-size: 0.75rem;
-    padding: 0.2rem;
+    padding: 10px 10px;
+    width: auto;
   }
 }
 
@@ -168,6 +170,12 @@
 
 .navbar-container .navbar .brand_with_prompt .signup_prompt a:hover {
   text-decoration: underline;
+}
+
+@media screen and (max-width: 400px) {
+  .navbar-container .navbar .brand_with_prompt .signup_prompt a {
+    font-size: 13px;
+  }
 }
 
 .navbar-container .navbar .post__nav__items {

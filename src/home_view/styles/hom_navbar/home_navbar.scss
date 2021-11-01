@@ -63,8 +63,10 @@
 				@include media_sm {
 					top: 4rem;
 					left: 1rem;
+					text-align: left;
 					font-size: 0.75rem;
-					padding: 0.2rem;
+					padding: 10px 10px;
+					width: auto;
 				}
 
 				@include media_xsm {
@@ -96,6 +98,10 @@
 
 					&:hover {
 						text-decoration: underline;
+					}
+
+					@include media_sm {
+						font-size: 13px;
 					}
 				}
 			}

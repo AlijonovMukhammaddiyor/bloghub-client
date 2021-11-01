@@ -96,9 +96,9 @@ export default function PostBody() {
 									<p className="author__name">{author.username}</p>
 								</Link>
 
-								<p>{new Date(post.createdAt).toDateString()}</p>
+								<p className="post_date">{new Date(post.createdAt).toDateString()}</p>
 								<p className="interpunct">·</p>
-								<p>{post.length} min read</p>
+								<p className="post_length">{post.length} min read</p>
 							</div>
 							<div className="post__header__share">
 								<img className="social__icons facebook" src={facebook} alt="" />

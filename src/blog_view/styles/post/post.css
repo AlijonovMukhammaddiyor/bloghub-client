@@ -7,6 +7,19 @@
   margin: auto;
 }
 
+@media (max-width: 768px) {
+  .post__body .post__body__container {
+    padding: 0 2rem;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 400px) {
+  .post__body .post__body__container {
+    padding: 0 1rem;
+  }
+}
+
 .post__body .post__body__container .post__body__header .post__body__title {
   font-size: 2.4rem;
   color: #303030;
@@ -14,11 +27,35 @@
   margin-bottom: 1rem;
 }
 
+@media (max-width: 768px) {
+  .post__body .post__body__container .post__body__header .post__body__title {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .post__body .post__body__container .post__body__header .post__body__title {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .post__body .post__body__container .post__body__header .post__body__title {
+    font-size: 1.5rem;
+  }
+}
+
 .post__body .post__body__container .post__body__header .post__body__subtitle {
   color: gray;
   font-size: 1.2rem;
   margin-bottom: 2rem;
   font-weight: lighter;
+}
+
+@media (max-width: 768px) {
+  .post__body .post__body__container .post__body__header .post__body__subtitle {
+    font-size: 1rem;
+  }
 }
 
 .post__body .post__body__container .post__body__header .post__body__tags {
@@ -68,6 +105,14 @@
   margin: auto 0.3rem;
 }
 
+@media (max-width: 576px) {
+  .post__body .post__body__container .post__body__header .post__body__tags .post__body__author__part .post_date,
+  .post__body .post__body__container .post__body__header .post__body__tags .post__body__author__part .post_length,
+  .post__body .post__body__container .post__body__header .post__body__tags .post__body__author__part .interpunct {
+    display: none;
+  }
+}
+
 .post__body .post__body__container .post__body__header .post__body__tags .post__body__author__part #bookmark {
   margin-top: 0.5rem;
 }
@@ -83,14 +128,51 @@
 }
 
 .post__body .post__body__container .post__body__header .post__body__tags .post__header__share .social__icons:hover {
-  width: 33px;
-  height: 33px;
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+
+@media (max-width: 576px) {
+  .post__body .post__body__container .post__body__header .post__body__tags .post__header__share .social__icons {
+    width: 30px;
+    height: 30px;
+    padding: 2px;
+  }
+}
+
+@media (max-width: 375px) {
+  .post__body .post__body__container .post__body__header .post__body__tags .post__header__share .social__icons {
+    width: 25px;
+    height: 25px;
+    padding: 2px;
+  }
+}
+
+.post__body .post__body__container .post__body__header .post__body__tags .post__header__share .link {
+  width: 35px;
+  height: 35px;
+}
+
+@media (max-width: 576px) {
+  .post__body .post__body__container .post__body__header .post__body__tags .post__header__share .link {
+    width: 28px;
+    height: 28px;
+    padding: 2px;
+  }
+}
+
+@media (max-width: 375px) {
+  .post__body .post__body__container .post__body__header .post__body__tags .post__header__share .link {
+    width: 22px;
+    height: 22px;
+    padding: 2px;
+  }
 }
 
 .post__body .post__body__container .post__body__body img {
   height: auto;
   width: 100%;
-  margin: 2rem auto;
+  margin: 0rem auto;
 }
 
 .post__body .post__body__container .post__body__body div.temp {
@@ -102,6 +184,12 @@
   visibility: visible;
 }
 
+@media (max-width: 1200px) {
+  .post__body .post__body__container .post__body__body .visible_ {
+    visibility: hidden;
+  }
+}
+
 .post__body .post__body__container .post__body__body .notVisible {
   visibility: hidden;
 }
@@ -110,6 +198,12 @@
   width: 15rem;
   position: absolute;
   left: -17rem;
+}
+
+@media (max-width: 1300px) {
+  .post__body .post__body__container .post__body__body .post__body__toolbox__inner {
+    margin-left: 2rem;
+  }
 }
 
 .post__body .post__body__container .post__body__body .post__body__toolbox__inner .post__body__toolbox__icons {
@@ -135,6 +229,12 @@
   color: #303030;
 }
 
+@media (max-width: 768px) {
+  .post__body .post__body__container .post__body__body .post__body__content {
+    font-size: 1rem;
+  }
+}
+
 .post__body .post__body__container .post__body__body .post__body__content ul {
   margin-left: 1.2rem;
 }
@@ -145,13 +245,29 @@
 }
 
 .post__body .post__body__container .post__body__body .post__body__categ__btn {
-  margin: 0 1rem 0 0;
+  margin: 0 10px 0 0;
   padding: 10px 12px;
   border: none;
   border-radius: 5px;
   color: gray;
   cursor: pointer;
   font-weight: light;
+}
+
+@media (max-width: 576px) {
+  .post__body .post__body__container .post__body__body .post__body__categ__btn {
+    padding: 8px 10px;
+    font-size: 80%;
+    margin-right: 10px;
+  }
+}
+
+@media (max-width: 375px) {
+  .post__body .post__body__container .post__body__body .post__body__categ__btn {
+    padding: 6px 8px;
+    font-size: 70%;
+    margin-right: 8px;
+  }
 }
 
 .post__body .post__body__container .post__body__body .post__body__categ__btn:hover {
@@ -176,6 +292,12 @@
   height: -moz-min-content;
   height: min-content;
   margin-top: 2rem;
+}
+
+@media (max-width: 576px) {
+  .post__body .post__body__container .post__body__body .post__body__final {
+    margin-top: 0;
+  }
 }
 
 .post__body .post__body__container .post__body__body .post__body__final .final__share {
@@ -204,8 +326,45 @@
 }
 
 .post__body .post__body__container .post__body__body .post__body__final .final__share .social__icons:hover {
-  width: 37px;
-  height: 37px;
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+
+@media (max-width: 576px) {
+  .post__body .post__body__container .post__body__body .post__body__final .final__share .social__icons {
+    width: 30px;
+    height: 30px;
+    padding: 2px;
+  }
+}
+
+@media (max-width: 375px) {
+  .post__body .post__body__container .post__body__body .post__body__final .final__share .social__icons {
+    width: 25px;
+    height: 25px;
+    padding: 2px;
+  }
+}
+
+.post__body .post__body__container .post__body__body .post__body__final .final__share .link {
+  width: 35px;
+  height: 35px;
+}
+
+@media (max-width: 576px) {
+  .post__body .post__body__container .post__body__body .post__body__final .final__share .link {
+    width: 28px;
+    height: 28px;
+    padding: 2px;
+  }
+}
+
+@media (max-width: 375px) {
+  .post__body .post__body__container .post__body__body .post__body__final .final__share .link {
+    width: 22px;
+    height: 22px;
+    padding: 2px;
+  }
 }
 
 .post__body .post__body__container .post__body__body .post__body__final .post__body__toolbox__icons {
@@ -252,6 +411,13 @@
   margin-right: 1rem;
 }
 
+@media (max-width: 700px) {
+  .post__body .post__body__container .post__body__body .post__body__final__profile .profile__inner #final__profilePic {
+    width: 52px;
+    height: 52px;
+  }
+}
+
 .post__body .post__body__container .post__body__body .post__body__final__profile .profile__inner .final-profile-name,
 .post__body .post__body__container .post__body__body .post__body__final__profile .profile__inner .final-profile-bio,
 .post__body .post__body__container .post__body__body .post__body__final__profile .profile__inner .writtenBy {
@@ -262,6 +428,26 @@
 .post__body .post__body__container .post__body__body .post__body__final__profile .profile__inner .writtenBy,
 .post__body .post__body__container .post__body__body .post__body__final__profile .profile__inner .final-profile-bio {
   color: gray;
+}
+
+@media (max-width: 700px) {
+  .post__body .post__body__container .post__body__body .post__body__final__profile .profile__inner .writtenBy,
+  .post__body .post__body__container .post__body__body .post__body__final__profile .profile__inner .final-profile-bio {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 700px) {
+  .post__body .post__body__container .post__body__body .post__body__final__profile .profile__inner .final-profile-name {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .post__body .post__body__container .post__body__body .post__body__final__profile .profile__inner .final-profile-bio {
+    position: absolute;
+    visibility: hidden;
+  }
 }
 
 .post__body .post__body__container .post__body__body .post__body__final__profile .profile__inner a {
@@ -304,62 +490,7 @@
   height: 20px;
 }
 
-@media (max-width: 1300px) {
-  .postBody-toolbox-inner {
-    margin-left: 2rem;
-  }
-}
-
-@media (max-width: 1200px) {
-  .visible {
-    visibility: hidden;
-  }
-}
-
-@media (max-width: 768px) {
-  .postBody-container {
-    padding: 0 2rem;
-    max-width: 100%;
-  }
-  .fullPost-title {
-    font-size: 2rem;
-  }
-  .fullPost-subtitle {
-    font-size: 1rem;
-  }
-  .postBody-content {
-    font-size: 1rem;
-  }
-}
-
-@media (max-width: 700px) {
-  #final-profilePic {
-    width: 52px;
-    height: 52px;
-  }
-  .writtenBy {
-    font-size: 0.8rem;
-  }
-  .final-profile-name {
-    font-size: 1.1rem;
-  }
-  .final-profile-bio {
-    font-size: 0.8rem;
-  }
-  .onFinal {
-    font-size: 0.8rem;
-    padding: 5px 8px;
-  }
-  .finalProfile {
-    font-size: 0.8rem;
-  }
-}
-
 @media (max-width: 400px) {
-  .final-profile-bio {
-    position: absolute;
-    visibility: hidden;
-  }
   .postBody-container {
     padding: 0 1rem;
   }

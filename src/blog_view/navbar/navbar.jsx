@@ -33,7 +33,9 @@ export default function Navbar(props) {
 	useEffect(() => {
 		window.addEventListener("click", (e) => {
 			if (profileHoverbox) {
-				if (e.target.className !== "profile__hoverbox") setHoverbox(false);
+				console.log(e.target.className);
+				if (e.target.className !== "profile__hoverbox" && e.target.className !== "logged__user")
+					setHoverbox(false);
 			}
 		});
 	});
