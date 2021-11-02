@@ -25,121 +25,132 @@ export default function Post(props) {
 
 	useEffect(() => {
 		if (user) {
-			if (user.liked.includes(props.post._id.toString())) {
+			if (props.post && user.liked.includes(props.post._id.toString())) {
 				setClap(true);
 			}
-			if (user.saved.includes(props.post._id.toString())) {
+			if (props.post && user.saved.includes(props.post._id.toString())) {
 				setSaved(true);
 			}
 		}
 		async function getUser() {
 			if (!author.username) {
-				const user = await axios.get(
+				console.log(props.post.author.id);
+				const res = await axios.get(
 					`https://bloghub-1.herokuapp.com/api/user/${props.post.author.id}`
 				);
-				if (user.data) setAuthor(user.data);
+				if (res.data) {
+					setAuthor(res.data);
+				}
 			}
 		}
 		getUser();
 	}, [setClap, author, user, props.post]);
 
 	const handleSubmitUnLike = async (e) => {
-		dispatch({ type: "UPDATE_START" });
-		const newLiked = user.liked.filter(function (item) {
-			return item.toString() !== props.post._id.toString();
-		});
-		const updatedUser = {
-			userId: user._id,
-			liked: newLiked,
-		};
-		try {
-			const res = await axios.put(
-				`https://bloghub-1.herokuapp.com/api/user/${user._id}`,
-				updatedUser
-			);
-			dispatch({ type: "UPDATE_SUCCESS", payload: res.data });
-		} catch (err) {
-			dispatch({ type: "UPDATE_FAILURE" });
-			console.log(err.response.data);
-			console.log("Could not update the user.");
+		if (user) {
+			dispatch({ type: "UPDATE_START" });
+			const newLiked = user.liked.filter(function (item) {
+				return item.toString() !== props.post._id.toString();
+			});
+			const updatedUser = {
+				userId: user._id,
+				liked: newLiked,
+			};
+			try {
+				const res = await axios.put(
+					`https://bloghub-1.herokuapp.com/api/user/${user._id}`,
+					updatedUser
+				);
+				dispatch({ type: "UPDATE_SUCCESS", payload: res.data });
+			} catch (err) {
+				dispatch({ type: "UPDATE_FAILURE" });
+				console.log(err.response.data);
+				console.log("Could not update the user.");
+			}
 		}
 	};
 
 	const handleSubmitUnSave = async (e) => {
-		dispatch({ type: "UPDATE_START" });
-		const newSaved = user.saved.filter(function (item) {
-			return item.toString() !== props.post._id.toString();
-		});
-		const updatedUser = {
-			userId: user._id,
-			saved: newSaved,
-		};
-		try {
-			const res = await axios.put(
-				`https://bloghub-1.herokuapp.com/api/user/${user._id}`,
-				updatedUser
-			);
-			dispatch({ type: "UPDATE_SUCCESS", payload: res.data });
-		} catch (err) {
-			dispatch({ type: "UPDATE_FAILURE" });
-			console.log(err.response.data);
-			console.log("Could not update the user.");
+		if (user) {
+			dispatch({ type: "UPDATE_START" });
+			const newSaved = user.saved.filter(function (item) {
+				return item.toString() !== props.post._id.toString();
+			});
+			const updatedUser = {
+				userId: user._id,
+				saved: newSaved,
+			};
+			try {
+				const res = await axios.put(
+					`https://bloghub-1.herokuapp.com/api/user/${user._id}`,
+					updatedUser
+				);
+				dispatch({ type: "UPDATE_SUCCESS", payload: res.data });
+			} catch (err) {
+				dispatch({ type: "UPDATE_FAILURE" });
+				console.log(err.response.data);
+				console.log("Could not update the user.");
+			}
 		}
 	};
 
 	const handleSubmitLiked = async (e) => {
-		dispatch({ type: "UPDATE_START" });
-		const userLiked = user.liked;
-		let updatedUser = {};
-		if (userLiked !== [] && !userLiked.includes(props.post._id.toString())) {
-			updatedUser = {
-				userId: user._id,
-				liked: [...userLiked, props.post._id],
-			};
-		} else {
-			updatedUser = {
-				userId: user._id,
-				liked: [props.post._id],
-			};
-		}
-		try {
-			const res = await axios.put(
-				`https://bloghub-1.herokuapp.com/api/user/${user._id}`,
-				updatedUser
-			);
-			dispatch({ type: "UPDATE_SUCCESS", payload: res.data });
-		} catch (err) {
-			dispatch({ type: "UPDATE_FAILURE" });
-			console.log(err.response.data);
-			console.log("Could not update the user.");
+		if (user) {
+			dispatch({ type: "UPDATE_START" });
+			const userLiked = user.liked;
+			let updatedUser = {};
+			if (userLiked !== [] && !userLiked.includes(props.post._id.toString())) {
+				updatedUser = {
+					userId: user._id,
+					liked: [...userLiked, props.post._id],
+				};
+			} else {
+				updatedUser = {
+					userId: user._id,
+					liked: [props.post._id],
+				};
+			}
+			try {
+				const res = await axios.put(
+					`https://bloghub-1.herokuapp.com/api/user/${user._id}`,
+					updatedUser
+				);
+				dispatch({ type: "UPDATE_SUCCESS", payload: res.data });
+			} catch (err) {
+				dispatch({ type: "UPDATE_FAILURE" });
+				console.log(err.response.data);
+				console.log("Could not update the user.");
+			}
 		}
 	};
 
 	const handleSubmitSave = async (e) => {
-		dispatch({ type: "UPDATE_START" });
-		const userSaved = user.saved;
-		let updatedUser = {};
-		if (userSaved !== [] && !userSaved.includes(props.post._id.toString())) {
-			updatedUser = {
-				userId: user._id,
-				saved: [...userSaved, props.post._id],
-			};
-		} else {
-			updatedUser = {
-				userId: user._id,
-				saved: [props.post._id],
-			};
-		}
-		try {
-			const res = await axios.put(
-				`https://bloghub-1.herokuapp.com/api/user/${user._id}`,
-				updatedUser
-			);
-			dispatch({ type: "UPDATE_SUCCESS", payload: res.data });
-		} catch (err) {
-			dispatch({ type: "UPDATE_FAILURE" });
-			console.log(err.response.data);
-			console.log("Could not update the user.");
+		if (user) {
+			dispatch({ type: "UPDATE_START" });
+			const userSaved = user.saved;
+			let updatedUser = {};
+			if (userSaved !== [] && !userSaved.includes(props.post._id.toString())) {
+				updatedUser = {
+					userId: user._id,
+					saved: [...userSaved, props.post._id],
+				};
+			} else {
+				updatedUser = {
+					userId: user._id,
+					saved: [props.post._id],
+				};
+			}
+			try {
+				const res = await axios.put(
+					`https://bloghub-1.herokuapp.com/api/user/${user._id}`,
+					updatedUser
+				);
+				dispatch({ type: "UPDATE_SUCCESS", payload: res.data });
+			} catch (err) {
+				dispatch({ type: "UPDATE_FAILURE" });
+				console.log(err.response.data);
+				console.log("Could not update the user.");
+			}
 		}
 	};
 
@@ -191,6 +202,11 @@ export default function Post(props) {
 		}
 	}
 
+	function isProfilePic(e) {
+		if (e && e.includes("https://www.pixsy.com")) return false;
+		return true;
+	}
+
 	return (
 		<div ref={ref} className="post__filter">
 			{author.username && (
@@ -198,9 +214,13 @@ export default function Post(props) {
 					<div className="post__filter__body">
 						<div className="post__filter__author">
 							<div className="post__filter__author__inner">
-								<img src={PF + author.profilePic} alt="" className="profile__icon" />
+								<img
+									src={isProfilePic(author.profilePic) ? PF + author.profilePic : author.profilePic}
+									alt=""
+									className="profile__icon"
+								/>
 								<div>
-									<Link to={`/post/tag?user=${author._id.toString()}`}>
+									<Link to={author._id ? `/post/tag?user=${author._id.toString()}` : "/"}>
 										<p className="author__name">{author.username}</p>
 									</Link>
 
@@ -212,7 +232,7 @@ export default function Post(props) {
 								</div>
 							</div>
 
-							{user._id === props.post.author.id && (
+							{user && user._id === props.post.author.id && (
 								<div className="delete__post" onClick={handleOptions}>
 									<FontAwesomeIcon icon={faCog} className={options ? "cog clicked" : "cog"} />
 									<div

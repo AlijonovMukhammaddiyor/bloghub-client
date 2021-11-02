@@ -6,6 +6,11 @@ import { faClock } from "@fortawesome/free-regular-svg-icons";
 import { faTags } from "@fortawesome/free-solid-svg-icons";
 
 export default function Posts(props) {
+	function isProfilePic(e) {
+		if (e.includes("https://www.pixsy.com")) return false;
+		return true;
+	}
+
 	const PF = "https://bloghub-1.herokuapp.com/images/";
 	return (
 		<div className="recent__posts__container">
@@ -38,7 +43,11 @@ export default function Posts(props) {
 					<div className="author">
 						<div className="left">
 							<img
-								src={PF + props.options.profilePic}
+								src={
+									isProfilePic(props.options.profilePic)
+										? PF + props.options.profilePic
+										: props.options.profilePic
+								}
 								style={{ obejectFit: "cover" }}
 								className="profilePic"
 								alt=""

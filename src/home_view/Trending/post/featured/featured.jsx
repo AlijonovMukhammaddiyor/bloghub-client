@@ -4,6 +4,7 @@ import "../../../styles/trending/post/featured/featured.css";
 
 export default function featured(props) {
 	const PF = "https://bloghub-1.herokuapp.com/images/";
+
 	return (
 		<div className="featured__post">
 			<Link to={`post/${props.post._id}`}>

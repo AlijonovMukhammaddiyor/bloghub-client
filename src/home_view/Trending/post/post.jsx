@@ -19,6 +19,7 @@ export default function Post(props) {
 	const { user, dispatch } = useContext(Context);
 
 	useEffect(() => {
+		let ismounted = true;
 		if (user) {
 			if (user.liked.includes(props.post._id.toString())) {
 				setClap(true);
@@ -32,10 +33,13 @@ export default function Post(props) {
 				const user = await axios.get(
 					`https://bloghub-1.herokuapp.com/api/user/` + props.post.author.id
 				);
-				setAuthor(user.data);
+				if (ismounted) setAuthor(user.data);
 			}
-			getUser();
+			if (ismounted) getUser();
 		}
+		return () => {
+			ismounted = false;
+		};
 	}, [setClap, author, user, props.post]);
 
 	const handleSubmitUnLike = async (e) => {

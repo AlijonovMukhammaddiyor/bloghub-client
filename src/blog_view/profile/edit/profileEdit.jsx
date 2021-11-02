@@ -62,6 +62,11 @@ const ProfileEdit = (props) => {
 		}
 	}
 
+	function isProfilePic(e) {
+		if (e.includes("https://www.pixsy.com")) return false;
+		return true;
+	}
+
 	return (
 		<>
 			<Navbar user={props.user} />
@@ -117,7 +122,11 @@ const ProfileEdit = (props) => {
 											objectFit: "cover",
 										}}
 										className="pic"
-										src={PF + props.user.profilePic}
+										src={
+											isProfilePic(props.user.profilePic)
+												? PF + props.user.profilePic
+												: props.user.profilePic
+										}
 										alt=""
 									/>
 								)}

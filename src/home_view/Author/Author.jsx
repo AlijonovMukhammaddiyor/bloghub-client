@@ -10,11 +10,20 @@ function follower_int_to_k(number) {
 
 export default function Author(props) {
 	const PF = "https://bloghub-1.herokuapp.com/images/";
+
+	function isProfilePic(e) {
+		if (e && e.includes("https://www.pixsy.com")) return false;
+		return true;
+	}
 	return (
 		<div className="author-hoverbox">
 			<div className="author-hoverbox-header">
 				<div>
-					<img id="profile-icon" src={PF + props.profileIcon} alt="" />
+					<img
+						id="profile-icon"
+						src={isProfilePic(props.profileIcon) ? PF + props.profileIcon : props.profileIcon}
+						alt=""
+					/>
 				</div>
 				<a href="#author-page">
 					<h4 style={{ color: "green", fontFamily: "Ubuntu" }}>{props.author.username}</h4>

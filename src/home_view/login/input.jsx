@@ -9,7 +9,7 @@ export default function Input() {
 
 	const userRef = useRef(null);
 	const passwordRef = useRef(null);
-	const { user, dispatch, isFetching } = useContext(Context);
+	const { dispatch, isFetching } = useContext(Context);
 
 	const handleSubmit = async (e) => {
 		e.preventDefault();

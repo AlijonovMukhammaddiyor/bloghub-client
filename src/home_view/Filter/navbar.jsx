@@ -23,6 +23,10 @@ const Navbar = (props) => {
 	function handleClick() {
 		setBurger(!burger);
 	}
+	function isProfilePic(e) {
+		if (e.includes("https://www.pixsy.com")) return false;
+		return true;
+	}
 
 	return (
 		<div className="main__navbar">
@@ -44,7 +48,7 @@ const Navbar = (props) => {
 					{props.user ? (
 						<div>
 							<img
-								src={PF + user.profilePic}
+								src={isProfilePic(user.profilePic) ? PF + user.profilePic : user.profilePic}
 								alt=""
 								className="logged__user"
 								onClick={(e) => {

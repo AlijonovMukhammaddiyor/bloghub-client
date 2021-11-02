@@ -144,6 +144,11 @@ export default function Post(props) {
 		}
 	};
 
+	function isProfilePic(e) {
+		if (e && e.includes("https://www.pixsy.com")) return false;
+		return true;
+	}
+
 	function renderClap(e) {
 		if (clap) return clapIcoG;
 		else return clapIco;
@@ -186,7 +191,11 @@ export default function Post(props) {
 				<div className="recent__post__header">
 					{author.username ? (
 						<div>
-							<img id="profile-icon" src={PF + author.profilePic} alt="" />
+							<img
+								id="profile-icon"
+								src={isProfilePic(author.profilePic) ? PF + author.profilePic : author.profilePic}
+								alt=""
+							/>
 						</div>
 					) : (
 						<div

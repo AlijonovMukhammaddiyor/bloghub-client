@@ -25,6 +25,11 @@ export default function Profile(props) {
 
 	const PF = "https://bloghub-1.herokuapp.com/images/";
 
+	function isProfilePic(e) {
+		if (e.includes("https://www.pixsy.com")) return false;
+		return true;
+	}
+
 	return (
 		<div className="profile__container">
 			<Navbar user={props.user} />
@@ -32,7 +37,9 @@ export default function Profile(props) {
 			<div className="edit__profile">
 				<h2>{props.user.username}</h2>
 				<img
-					src={PF + props.user.profilePic}
+					src={
+						isProfilePic(props.user.profilePic) ? PF + props.user.profilePic : props.user.profilePic
+					}
 					style={{ objectFit: "cover" }}
 					alt=""
 					className="profile__image"

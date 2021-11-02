@@ -35,6 +35,11 @@ export default function PostBody() {
 		};
 	}, [post, id]);
 
+	function isProfilePic(e) {
+		if (e.includes("https://www.pixsy.com")) return false;
+		return true;
+	}
+
 	useEffect(() => {
 		let ismounted = true;
 		async function getUser() {
@@ -53,24 +58,6 @@ export default function PostBody() {
 		return () => (ismounted = false);
 	});
 
-	// useEffect(() => {
-	// 	document.addEventListener("scroll", handleScroll);
-	// 	return () => window.removeEventListener("scroll", handleScroll);
-	// }, []);
-
-	// const handleScroll = (height) => {
-	// 	let ismounted = true;
-	// 	const targetPoint = document.getElementsByClassName("post__body__final__profile");
-	// 	try {
-	// 		const value = targetPoint[0].getBoundingClientRect().top;
-	// 		setShow(window.pageYOffset > 900 && value > 700);
-	// 		targetPoint[0].marginTop = window.pageYOffset + 80;
-	// 	} catch (e) {
-	// 		if (ismounted) setShow(false);
-	// 	}
-	// 	return () => (ismounted = false);
-	// };
-
 	return (
 		<div className="post__body" style={{ minHeight: "100vh" }}>
 			{post._id ? (
@@ -81,7 +68,13 @@ export default function PostBody() {
 						<div className="post__body__tags">
 							<div className="post__body__author__part">
 								{author.username ? (
-									<img src={PF + author.profilePic} alt="" id="profile-icon" />
+									<img
+										src={
+											isProfilePic(author.profilePic) ? PF + author.profilePic : author.profilePic
+										}
+										alt=""
+										id="profile-icon"
+									/>
 								) : (
 									<div
 										style={{
@@ -144,7 +137,9 @@ export default function PostBody() {
 								{author.username ? (
 									<img
 										style={{ objectFit: "cover" }}
-										src={PF + author.profilePic}
+										src={
+											isProfilePic(author.profilePic) ? PF + author.profilePic : author.profilePic
+										}
 										id="final__profilePic"
 										alt=""
 									/>
