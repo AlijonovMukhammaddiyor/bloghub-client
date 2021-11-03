@@ -8,7 +8,6 @@ export default function SavedOrLiked(props) {
 		<div className="CatPosts__container">
 			<LogNavbar user={props.user} />
 			<Main user={props.user} saved={true} />
-			<Footer />
 		</div>
 	);
 }
