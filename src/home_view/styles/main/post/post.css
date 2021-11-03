@@ -286,9 +286,7 @@
 @media (max-width: 500px) {
   .recent__post__card .recent__post__body .recent__post__footer .subfooter__left .interpunct,
   .recent__post__card .recent__post__body .recent__post__footer .subfooter__left .post__length {
-    position: absolute;
-    visibility: hidden;
-    width: 0;
+    display: none;
   }
 }
 

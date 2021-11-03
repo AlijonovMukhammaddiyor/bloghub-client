@@ -3,17 +3,13 @@ import { Link } from "react-router-dom";
 import "../../../styles/trending/post/featured/featured.css";
 
 export default function featured(props) {
-	const PF = "https://bloghub-1.herokuapp.com/images/";
-
 	return (
 		<div className="featured__post">
 			<Link to={`post/${props.post._id}`}>
 				<div
 					className="featured__post__container"
 					style={{
-						backgroundImage: `linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.6)), url(${
-							PF + props.post.Img
-						})`,
+						backgroundImage: `linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.6)), url(${props.post.Img})`,
 					}}
 				>
 					<div className="featured__body">

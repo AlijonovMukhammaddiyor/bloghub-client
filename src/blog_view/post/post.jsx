@@ -19,8 +19,6 @@ export default function PostBody() {
 	const location = useLocation();
 	const id = location.pathname.split("/")[2];
 
-	const PF = "https://bloghub-1.herokuapp.com/images/";
-
 	useEffect(() => {
 		let ismounted = true;
 		const getPost = async () => {
@@ -34,11 +32,6 @@ export default function PostBody() {
 			ismounted = false;
 		};
 	}, [post, id]);
-
-	function isProfilePic(e) {
-		if (e.includes("https://www.pixsy.com")) return false;
-		return true;
-	}
 
 	useEffect(() => {
 		let ismounted = true;
@@ -68,13 +61,7 @@ export default function PostBody() {
 						<div className="post__body__tags">
 							<div className="post__body__author__part">
 								{author.username ? (
-									<img
-										src={
-											isProfilePic(author.profilePic) ? PF + author.profilePic : author.profilePic
-										}
-										alt=""
-										id="profile-icon"
-									/>
+									<img src={author.profilePic} alt="" id="profile-icon" />
 								) : (
 									<div
 										style={{
@@ -102,7 +89,7 @@ export default function PostBody() {
 						</div>
 					</div>
 					<div className="post__body__body">
-						<img src={PF + post.Img} alt="" />
+						<img src={post.Img} alt="" />
 						<div className={false ? "visible" : "notVisible"}>
 							<div className="post__body__toolbox__inner">
 								<Author
@@ -137,9 +124,7 @@ export default function PostBody() {
 								{author.username ? (
 									<img
 										style={{ objectFit: "cover" }}
-										src={
-											isProfilePic(author.profilePic) ? PF + author.profilePic : author.profilePic
-										}
+										src={author.profilePic}
 										id="final__profilePic"
 										alt=""
 									/>

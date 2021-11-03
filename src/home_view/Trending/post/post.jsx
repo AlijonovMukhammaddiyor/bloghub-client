@@ -15,7 +15,6 @@ export default function Post(props) {
 	const [author, setAuthor] = useState({});
 	const [again, setAgain] = useState(false);
 
-	const PF = "https://bloghub-1.herokuapp.com/images/";
 	const { user, dispatch } = useContext(Context);
 
 	useEffect(() => {
@@ -180,10 +179,10 @@ export default function Post(props) {
 		}
 	}
 	return (
-		<div className="treding__post__container">
+		<div className="treding__post__container" style={{ minHeight: "30vh" }}>
 			<Link to={`/post/${props.post._id}`}>
 				<div className="post__image">
-					<img src={PF + props.post.Img} alt="" />
+					<img src={props.post.Img} alt="" />
 					<p className="post_sub_category_btn">{props.post.category[0]}</p>
 				</div>
 				<div className="post__header">

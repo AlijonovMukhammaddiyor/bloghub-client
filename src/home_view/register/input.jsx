@@ -8,6 +8,7 @@ export default function Input() {
 	const [password, setPassword] = useState("");
 	const [bio, setBio] = useState("");
 	const [error, setError] = useState(false);
+	const [file, setFile] = useState(null);
 
 	const handleSubmit = async (e) => {
 		e.preventDefault();
@@ -18,9 +19,22 @@ export default function Input() {
 				email,
 				bio,
 				password,
+				profilePic:
+					"https://www.pixsy.com/wp-content/uploads/2021/04/ben-sweet-2LowviVHZ-E-unsplash-1.jpeg",
 			});
 
-			res.data && window.location.replace("/signin/username");
+			if (file) {
+				const data = new FormData();
+				const filename = Date.now() + file.name;
+				data.append("name", filename);
+				data.append("file", file);
+				try {
+					await axios.post(`http://bloghub-1.herokuapp.com/user/${res.data._id}/upload`, data);
+				} catch (err) {
+					console.log(err);
+				}
+			}
+			res.data && window.location.replace("/signin");
 		} catch (err) {
 			setError(true);
 		}
@@ -68,7 +82,11 @@ export default function Input() {
 							}}
 						>
 							<img
-								src="https://www.pixsy.com/wp-content/uploads/2021/04/ben-sweet-2LowviVHZ-E-unsplash-1.jpeg"
+								src={
+									file
+										? URL.createObjectURL(file)
+										: "https://www.pixsy.com/wp-content/uploads/2021/04/ben-sweet-2LowviVHZ-E-unsplash-1.jpeg"
+								}
 								alt=""
 								className="pic"
 								style={{ width: "80px", height: "80px", borderRadius: "50%", objectFit: "cover" }}
@@ -92,6 +110,7 @@ export default function Input() {
 								type="file"
 								style={{ display: "none" }}
 								className="input__upload__pic"
+								onChange={(e) => setFile(e.target.files[0])}
 							/>
 						</div>
 						<div className="group">

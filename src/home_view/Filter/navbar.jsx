@@ -11,8 +11,6 @@ const Navbar = (props) => {
 	const [burger, setBurger] = useState(true);
 	const [profileHoverbox, setHoverbox] = useState(false);
 
-	const PF = "https://bloghub-1.herokuapp.com/images/";
-
 	const { user } = useContext(Context);
 
 	function handleBurger() {
@@ -23,16 +21,19 @@ const Navbar = (props) => {
 	function handleClick() {
 		setBurger(!burger);
 	}
-	function isProfilePic(e) {
-		if (e.includes("https://www.pixsy.com")) return false;
-		return true;
-	}
 
 	return (
 		<div className="main__navbar">
 			<div className="my__navbar">
 				<div className="nav__header">
-					<img src={logo} alt="" className="b__logo" style={{ borderRadius: "0", width: "40px" }} />
+					<Link to="/">
+						<img
+							src={logo}
+							alt=""
+							className="b__logo"
+							style={{ borderRadius: "0", width: "40px" }}
+						/>
+					</Link>
 				</div>
 				<div className="nav__links">
 					<a href="/" className="nav__link">
@@ -48,7 +49,7 @@ const Navbar = (props) => {
 					{props.user ? (
 						<div>
 							<img
-								src={isProfilePic(user.profilePic) ? PF + user.profilePic : user.profilePic}
+								src={user.profilePic}
 								alt=""
 								className="logged__user"
 								onClick={(e) => {

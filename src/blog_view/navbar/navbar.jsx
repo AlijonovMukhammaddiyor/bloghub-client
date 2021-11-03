@@ -10,7 +10,6 @@ import Profilehoverbox from "../../home_view/profile_hoverbox/ProfileHoverbox";
 export default function Navbar(props) {
 	const [cats, setCats] = useState([]);
 	const [profileHoverbox, setHoverbox] = useState(false);
-	const PF = "https://bloghub-1.herokuapp.com/images/";
 
 	useEffect(() => {
 		let ismounted = true;
@@ -33,7 +32,6 @@ export default function Navbar(props) {
 	useEffect(() => {
 		window.addEventListener("click", (e) => {
 			if (profileHoverbox) {
-				console.log(e.target.className);
 				if (e.target.className !== "profile__hoverbox" && e.target.className !== "logged__user")
 					setHoverbox(false);
 			}
@@ -87,7 +85,7 @@ export default function Navbar(props) {
 					{props.user ? (
 						<div style={{ position: "relative" }}>
 							<img
-								src={PF + props.user.profilePic}
+								src={props.user.profilePic}
 								alt=""
 								className="logged__user"
 								onClick={(e) => {

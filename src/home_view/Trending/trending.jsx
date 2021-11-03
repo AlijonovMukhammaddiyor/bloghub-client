@@ -5,18 +5,22 @@ import Featured from "./post/featured/featured";
 import axios from "axios";
 
 export default function Trending() {
-	const [posts, setPosts] = useState([]);
+	const [posts, setPosts] = useState(null);
 
 	useEffect(() => {
+		let ismounted = true;
 		const fetchPosts = async () => {
 			const res = await axios.get("https://bloghub-1.herokuapp.com/api/posts");
-			setPosts(res.data);
+			if (res.data.length > 0) if (ismounted) setPosts(res.data);
 			if (res.data.length > 5) {
-				setPosts(Array.from(res.data).slice(0, 5));
+				if (ismounted) setPosts(Array.from(res.data).slice(0, 5));
 			}
 		};
-		fetchPosts();
-	}, []);
+		if (ismounted) fetchPosts();
+		return () => {
+			ismounted = false;
+		};
+	}, [posts]);
 
 	return (
 		<div>
@@ -27,7 +31,7 @@ export default function Trending() {
 						Trending on <span id="blogHub">Bloghub</span>
 					</h3>
 				</div>
-				{posts.length > 0 && (
+				{posts && posts.length > 1 && (
 					<div className="trending__body">
 						<Featured post={posts[0]} className="featured" />
 						<Post post={posts[1]} className="first__trending__post" />

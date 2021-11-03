@@ -121,6 +121,9 @@
 			height: auto;
 			object-fit: cover;
 			max-height: 40rem;
+			@include break_lg {
+				width: 100%;
+			}
 		}
 
 		.label {

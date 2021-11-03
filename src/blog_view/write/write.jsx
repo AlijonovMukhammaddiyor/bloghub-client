@@ -83,7 +83,7 @@ function Write(props) {
 
 	useEffect(() => {
 		const getCats = async () => {
-			let catss = await axios.get("https://bloghub-1.herokuapp.com/api/categories");
+			let catss = await axios.get("http://bloghub-1.herokuapp.com/api/categories");
 			setCats(Array.from(catss.data));
 		};
 		getCats();
@@ -100,23 +100,27 @@ function Write(props) {
 			author: {
 				name: props.user.username,
 				id: props.user._id,
+				profilePic: props.user.ProfilePic,
 			},
 		};
-		if (file) {
-			const data = new FormData();
-			const filename = Date.now() + file.name;
-			data.append("name", filename);
-			data.append("file", file);
-			newPost.Img = filename;
-			try {
-				await axios.post("https://bloghub-1.herokuapp.com/api/upload", data);
-			} catch (err) {}
-		}
 		try {
-			const res = await axios.post("https://bloghub-1.herokuapp.com/api/posts", newPost);
+			newPost.Img = "https://cdn.wallpapersafari.com/4/72/Kajk73.jpg";
+			const res = await axios.post("http://bloghub-1.herokuapp.com/api/posts", newPost);
+
+			if (file) {
+				const data = new FormData();
+				const filename = Date.now() + file.name;
+				data.append("name", filename);
+				data.append("file", file);
+				try {
+					await axios.post(`http://bloghub-1.herokuapp.com/${res.data._id}/upload`, data);
+				} catch (err) {
+					console.log(err);
+				}
+			}
 			window.location.replace("/post/" + res.data._id);
 		} catch (err) {
-			console.log(err.response.data);
+			console.log(err);
 		}
 	};
 

@@ -21,8 +21,6 @@ export default function Post(props) {
 
 	const { user, dispatch } = useContext(Context);
 
-	const PF = "https://bloghub-1.herokuapp.com/images/";
-
 	useEffect(() => {
 		if (user) {
 			if (props.post && user.liked.includes(props.post._id.toString())) {
@@ -34,7 +32,6 @@ export default function Post(props) {
 		}
 		async function getUser() {
 			if (!author.username) {
-				console.log(props.post.author.id);
 				const res = await axios.get(
 					`https://bloghub-1.herokuapp.com/api/user/${props.post.author.id}`
 				);
@@ -202,10 +199,13 @@ export default function Post(props) {
 		}
 	}
 
-	function isProfilePic(e) {
-		if (e && e.includes("https://www.pixsy.com")) return false;
-		return true;
-	}
+	const deletePost = async (e) => {
+		try {
+			await axios.delete(`https://bloghub-1.herokuapp.com/api/posts/${props.post._id}`);
+		} catch (err) {
+			console.log(err);
+		}
+	};
 
 	return (
 		<div ref={ref} className="post__filter">
@@ -214,11 +214,7 @@ export default function Post(props) {
 					<div className="post__filter__body">
 						<div className="post__filter__author">
 							<div className="post__filter__author__inner">
-								<img
-									src={isProfilePic(author.profilePic) ? PF + author.profilePic : author.profilePic}
-									alt=""
-									className="profile__icon"
-								/>
+								<img src={author.profilePic} alt="" className="profile__icon" />
 								<div>
 									<Link to={author._id ? `/post/tag?user=${author._id.toString()}` : "/"}>
 										<p className="author__name">{author.username}</p>
@@ -242,13 +238,12 @@ export default function Post(props) {
 												? {
 														zIndex: "10",
 														backgroundColor: "white",
-														right: "-2rem",
 												  }
 												: { visibility: "hidden" }
 										}
 									>
-										<a href="//">Edit</a>
-										<a href="//">Delete</a>
+										<button>Edit</button>
+										<button onClick={deletePost}>Delete</button>
 									</div>
 								</div>
 							)}
@@ -256,7 +251,7 @@ export default function Post(props) {
 					</div>
 					<div className="post__filter__img">
 						<Link to={`/post/${props.post._id}`}>
-							<img src={PF + props.post.Img} alt="" className="post__img" style={style} />
+							<img src={props.post.Img} alt="" className="post__img" style={style} />
 						</Link>
 					</div>
 					<div className="post__filter__title">

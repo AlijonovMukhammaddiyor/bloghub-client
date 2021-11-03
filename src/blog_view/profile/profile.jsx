@@ -23,13 +23,6 @@ export default function Profile(props) {
 		}
 	}, [posts, props.user]);
 
-	const PF = "https://bloghub-1.herokuapp.com/images/";
-
-	function isProfilePic(e) {
-		if (e.includes("https://www.pixsy.com")) return false;
-		return true;
-	}
-
 	return (
 		<div className="profile__container">
 			<Navbar user={props.user} />
@@ -37,9 +30,7 @@ export default function Profile(props) {
 			<div className="edit__profile">
 				<h2>{props.user.username}</h2>
 				<img
-					src={
-						isProfilePic(props.user.profilePic) ? PF + props.user.profilePic : props.user.profilePic
-					}
+					src={props.user.profilePic}
 					style={{ objectFit: "cover" }}
 					alt=""
 					className="profile__image"
@@ -57,7 +48,12 @@ export default function Profile(props) {
 
 			<div className="recent__posts">
 				<div
-					style={{ display: "flex", alignItems: "center", gap: "0.5rem", marginBottom: "0.5rem" }}
+					style={{
+						display: "flex",
+						alignItems: "center",
+						gap: "0.5rem",
+						marginBottom: "0.5rem",
+					}}
 				>
 					<FontAwesomeIcon
 						icon={faTag}

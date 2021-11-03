@@ -3,6 +3,7 @@ import "../../styles/profile/profileEdit/edit.css";
 import Navbar from "../../navbar/navbar";
 import { Context } from "../../../context/Context";
 import axios from "axios";
+import { useHistory } from "react-router-dom";
 
 const ProfileEdit = (props) => {
 	const [file, setFile] = useState(null);
@@ -12,12 +13,12 @@ const ProfileEdit = (props) => {
 	const [password, setPassword] = useState("");
 	const [success, setSuccess] = useState(false);
 
+	const history = useHistory();
+
 	const { dispatch } = useContext(Context);
-	const PF = "https://bloghub-1.herokuapp.com/images/";
 
 	const handleSubmit = async (e) => {
 		e.preventDefault();
-		console.log("submitted");
 		dispatch({ type: "UPDATE_START" });
 		const updatedUser = {
 			userId: props.user._id,
@@ -31,9 +32,8 @@ const ProfileEdit = (props) => {
 			const filename = Date.now() + file.name;
 			data.append("name", filename);
 			data.append("file", file);
-			updatedUser.profilePic = filename;
 			try {
-				await axios.post("https://bloghub-1.herokuapp.com/api/upload", data);
+				await axios.post(`https://bloghub-1.herokuapp.com/user/${props.user._id}/upload`, data);
 				console.log("success");
 			} catch (err) {
 				console.log(err.response.data);
@@ -46,6 +46,7 @@ const ProfileEdit = (props) => {
 			);
 			setSuccess(true);
 			dispatch({ type: "UPDATE_SUCCESS", payload: res.data });
+			history.goBack();
 		} catch (err) {
 			dispatch({ type: "UPDATE_FAILURE" });
 			console.log(err.response.data);
@@ -60,11 +61,6 @@ const ProfileEdit = (props) => {
 		} else {
 			x.type = "password";
 		}
-	}
-
-	function isProfilePic(e) {
-		if (e.includes("https://www.pixsy.com")) return false;
-		return true;
 	}
 
 	return (
@@ -122,11 +118,7 @@ const ProfileEdit = (props) => {
 											objectFit: "cover",
 										}}
 										className="pic"
-										src={
-											isProfilePic(props.user.profilePic)
-												? PF + props.user.profilePic
-												: props.user.profilePic
-										}
+										src={props.user.profilePic}
 										alt=""
 									/>
 								)}

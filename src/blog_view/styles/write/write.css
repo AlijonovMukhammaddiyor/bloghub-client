@@ -165,6 +165,12 @@
   max-height: 40rem;
 }
 
+@media (max-width: 900px) {
+  .write__container .write__image img {
+    width: 100%;
+  }
+}
+
 .write__container .write__image .label {
   -webkit-box-align: center;
       -ms-flex-align: center;

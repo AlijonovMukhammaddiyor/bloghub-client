@@ -15,8 +15,6 @@ export default function Post(props) {
 	const [author, setAuthor] = useState({});
 	const [again, setAgain] = useState(false);
 
-	const PF = "https://bloghub-1.herokuapp.com/images/";
-
 	const { user, dispatch } = useContext(Context);
 
 	useEffect(() => {
@@ -144,11 +142,6 @@ export default function Post(props) {
 		}
 	};
 
-	function isProfilePic(e) {
-		if (e && e.includes("https://www.pixsy.com")) return false;
-		return true;
-	}
-
 	function renderClap(e) {
 		if (clap) return clapIcoG;
 		else return clapIco;
@@ -185,17 +178,14 @@ export default function Post(props) {
 			e.target.src = BookmarkSolid;
 		}
 	}
+
 	return (
 		<div className="recent__post__card">
 			<div className="recent__post__body">
 				<div className="recent__post__header">
 					{author.username ? (
 						<div>
-							<img
-								id="profile-icon"
-								src={isProfilePic(author.profilePic) ? PF + author.profilePic : author.profilePic}
-								alt=""
-							/>
+							<img id="profile-icon" src={author.profilePic} alt="" />
 						</div>
 					) : (
 						<div
@@ -239,7 +229,7 @@ export default function Post(props) {
 
 				<div className="recent__post__footer">
 					<div className="subfooter__left">
-						<p>{new Date(props.post.createdAt).toDateString()}</p>
+						<p>{new Date(props.post.createdAt).toLocaleDateString("en-GB")}</p>
 						<p className="interpunct">·</p>
 						<p className="post__length">{props.post.length} min</p>
 						<p>·</p>
@@ -256,7 +246,7 @@ export default function Post(props) {
 			<div className="recent__post__img">
 				<Link to={`/post/${props.post._id}`}>
 					<div>
-						<img src={PF + props.post.Img} alt="" />
+						<img src={props.post.Img} alt="" />
 					</div>
 				</Link>
 			</div>

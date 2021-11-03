@@ -98,11 +98,21 @@
   width: 5rem;
 }
 
-.post__filter .delete__post .options a {
-  color: black;
+@media (max-width: 1000px) {
+  .post__filter .delete__post .options {
+    right: 1.5rem;
+    top: 0;
+  }
 }
 
-.post__filter .delete__post .options a:hover {
+.post__filter .delete__post .options button {
+  color: black;
+  background-color: white;
+  border: none;
+  padding: 0;
+}
+
+.post__filter .delete__post .options button:hover {
   text-decoration: underline;
 }
 

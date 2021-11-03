@@ -85,8 +85,15 @@ $container_width_2: 46rem;
 			box-shadow: 0 0 10px lightgray;
 			width: 5rem;
 
-			a {
+			@media (max-width: 1000px) {
+				right: 1.5rem;
+				top: 0;
+			}
+			button {
 				color: black;
+				background-color: white;
+				border: none;
+				padding: 0;
 
 				&:hover {
 					text-decoration: underline;

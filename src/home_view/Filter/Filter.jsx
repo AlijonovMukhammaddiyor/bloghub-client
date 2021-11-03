@@ -13,8 +13,6 @@ export default function Filter(props) {
 	const [search_term, setSearchTerm] = useState("");
 	const [posts, setPosts] = useState([]);
 
-	// const PF = "https://bloghub-1.herokuapp.com/images/";
-
 	useEffect(() => {
 		const getPost = async () => {
 			if (search_term !== "") {

@@ -205,9 +205,7 @@
 				.interpunct,
 				.post__length {
 					@include media_xsm {
-						position: absolute;
-						visibility: hidden;
-						width: 0;
+						display: none;
 					}
 				}
 
