@@ -39,7 +39,8 @@ export default function Post(props) {
 		return () => {
 			ismounted = false;
 		};
-	}, [setClap, props, author, user]);
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, []);
 
 	const handleSubmitUnLike = async (e) => {
 		dispatch({ type: "UPDATE_START" });

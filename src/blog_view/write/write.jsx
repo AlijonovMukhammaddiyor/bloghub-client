@@ -87,7 +87,8 @@ function Write(props) {
 			setCats(Array.from(catss.data));
 		};
 		getCats();
-	}, [cats]);
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, []);
 
 	const handleSubmit = async (e) => {
 		e.preventDefault();

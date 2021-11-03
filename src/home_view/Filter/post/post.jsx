@@ -41,7 +41,8 @@ export default function Post(props) {
 			}
 		}
 		getUser();
-	}, [setClap, author, user, props.post]);
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, []);
 
 	const handleSubmitUnLike = async (e) => {
 		if (user) {

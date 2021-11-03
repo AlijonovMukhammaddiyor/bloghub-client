@@ -31,7 +31,8 @@ export default function PostBody() {
 		return () => {
 			ismounted = false;
 		};
-	}, [post, id]);
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, [id]);
 
 	useEffect(() => {
 		let ismounted = true;
@@ -47,7 +48,7 @@ export default function PostBody() {
 				}
 			}
 		}
-		if (ismounted) getUser();
+		if (ismounted) if (!author.username) getUser();
 		return () => (ismounted = false);
 	});
 

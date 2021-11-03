@@ -21,7 +21,8 @@ export default function Profile(props) {
 		if (true) {
 			getPosts();
 		}
-	}, [posts, props.user]);
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, []);
 
 	return (
 		<div className="profile__container">

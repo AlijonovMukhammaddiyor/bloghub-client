@@ -20,7 +20,8 @@ export default function Trending() {
 		return () => {
 			ismounted = false;
 		};
-	}, [posts]);
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, []);
 
 	return (
 		<div>

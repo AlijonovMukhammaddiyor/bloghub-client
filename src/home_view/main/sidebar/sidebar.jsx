@@ -20,7 +20,8 @@ export default function Sidebar() {
 		return () => {
 			ismounted = false;
 		};
-	}, [cats]);
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, []);
 
 	function seeAllTopics() {
 		setSeeAll(!seeAll);

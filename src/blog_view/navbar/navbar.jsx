@@ -22,7 +22,8 @@ export default function Navbar(props) {
 		}
 
 		return () => (ismounted = false);
-	}, [cats]);
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, []);
 
 	useEffect(() => {
 		window.addEventListener("scroll", handleScroll);

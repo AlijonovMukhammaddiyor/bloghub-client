@@ -21,7 +21,8 @@ export default function PostNavbar() {
 			};
 			getCats();
 		}
-	}, [cats]);
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, []);
 
 	return (
 		<div className="post__nav">
